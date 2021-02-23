@@ -1,0 +1,14 @@
+@media (min-width: 320px) and (max-width: 375px) {
+    
+    .hubspot-form {
+        /* position: static !important; */
+        width: 300px;
+        display: flex;
+        justify-content: flex-start;        
+    }
+
+    .button-form {
+        width: 200px;
+        height: 50px;
+    }
+}
