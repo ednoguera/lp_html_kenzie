@@ -28,12 +28,12 @@ const HeaderTyp = props => {
                     <TextFinal>
                         <p>{props.itemList1}</p>
                     </TextFinal>
-                    <motion.a href={props.urlYoutube} target="_blank">
-                        <motion.button style={props.styleBtnYoutube} whileHover={{
+                    <motion.a href={props.urlTelegram} target="_blank">
+                        <motion.button style={props.styleBtnTelegram} whileHover={{
                             scale: 1.2,
                             transition: { duration: 1 },
                         }}
-                            whileTap={{ scale: 0.9 }}>{props.ctaYoutube}</motion.button>
+                            whileTap={{ scale: 0.9 }}>{props.ctaTelegram}</motion.button>
                     </motion.a>
                     <TextFinal>
                         <p>{props.itemList2}</p>
@@ -41,9 +41,26 @@ const HeaderTyp = props => {
                 </OrderedList>
                 <TextFinal>
                     <p>
-                        {props.text}
+                        {props.textFinal1}
+                    </p>
+
+                    <p>
+                        {props.textFinal2}
                     </p>
                 </TextFinal>
+                <TextFinal>
+                    <p>
+                        {props.textFinal3}
+                    </p>
+                </TextFinal>
+
+                <motion.a href={props.urlYoutube} target="_blank">
+                    <motion.button style={props.styleBtnYoutube} whileHover={{
+                        scale: 1.2,
+                        transition: { duration: 1 },
+                    }}
+                                   whileTap={{ scale: 0.9 }}>{props.ctaYoutube}</motion.button>
+                </motion.a>
 
             </div>
             <HashtagSection />
