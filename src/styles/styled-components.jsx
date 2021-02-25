@@ -18,8 +18,9 @@ const HeaderApp = styled.header`
     
 
     @media (min-width: 300px) and (max-width: 1024px) {
-        flex-direction: column;
-        height: 620px;
+        padding-top: 20px;
+        justify-content: flex-start;
+        height: 720px;
     }
 `
 
@@ -33,14 +34,10 @@ const BannerContainer = styled.div`
   }
 `
 
-const LogoContainer = styled.figure`
+const LogoContainer = styled.img`
+  
     @media (min-width: 320px) and (max-width: 1024px){
-      width: 75%;
-      padding-top: 50px;
-
-      img {
-            margin: 0 auto;
-          }
+        padding: 0px 0 20px 45%;
     }
 `
 
@@ -525,8 +522,8 @@ const Form = styled.form`
     
     @media (min-width: 300px) and (max-width: 1024px) {
         width: 100%;
-        height: 250px;
-        padding: 0px 0 0px 10px;
+        height: 350px;
+        padding: 0px 0px 0px 0px;
     }
 `
 
@@ -548,7 +545,7 @@ const Input = styled.input`
         width: 264px;
         font-size: 16px;
         text-align: center;
-        margin: 0 auto;
+        margin: 10px;
     }
 `
 
@@ -566,9 +563,9 @@ const Button = styled.button`
     font-weight: bold;
 
     @media (min-width: 300px) and (max-width: 1024px) {
-        height: 52px;
+        height: 70px;
         width: 270px;
-        margin: 1rem auto;
+        margin: 10px;
     }
 `
 
