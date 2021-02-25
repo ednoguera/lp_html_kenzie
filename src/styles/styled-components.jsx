@@ -275,7 +275,7 @@ const Section = styled.section`
     @media (min-width: 300px) and (max-width: 1024px) {
         display: flex;
         flex-direction: column;
-        height: 900px;
+        height: 1050px;
 
         p {
             font-size: 16px;
