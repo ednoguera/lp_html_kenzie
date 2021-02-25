@@ -5,14 +5,14 @@ import { colors } from '../../styles/colors'
 
 const HashtagSection = () => {
 
-    const { cian } = colors
-    const { purple } = colors
+    const { blue } = colors
+    const { orange } = colors
 
     return (
         <HashSection>
-            <Hashtag tag="KENZIEMADE" color={purple} />
-            <Hashtag tag="SOUKENZIE" color={cian} />
-            <Hashtag tag="NINGUEMMESEGURA" color={purple} />
+            <Hashtag tag="KENZIEMADE" color={orange} />
+            <Hashtag tag="SOUKENZIE" color={blue} />
+            <Hashtag tag="NINGUEMMESEGURA" color={orange} />
         </HashSection>
     )
 }
