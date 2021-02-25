@@ -473,7 +473,7 @@ const HeaderTypSection = styled.header`
     }
 
     @media (min-width: 300px) and (max-width: 424px) {
-        height: 1560px;
+        height: 1860px;
 
         h1 {
             font-size: 26px;
@@ -493,7 +493,7 @@ const HeaderTypSection = styled.header`
     }
   
     @media (min-width: 425px) and (max-width: 1024px) {
-        height: 1300px;
+        height: 1550px;
 
       h1 {
         font-size: 26px;
