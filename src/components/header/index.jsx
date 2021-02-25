@@ -15,9 +15,7 @@ const Header = (props) => {
     return (
         <HeaderApp>
             <BannerContainer>
-                <LogoContainer>
-                    <img src={logoBlue}/>
-                </LogoContainer>
+                <LogoContainer src={logoBlue}/>
 
                 <HeaderContainer>
                     <div>
