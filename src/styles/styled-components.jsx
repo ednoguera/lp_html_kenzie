@@ -19,7 +19,7 @@ const HeaderApp = styled.header`
 
     @media (min-width: 300px) and (max-width: 1024px) {
         flex-direction: column;
-        height: 550px;
+        height: 620px;
     }
 `
 
@@ -53,7 +53,13 @@ const HeaderContainer = styled.div`
     width: 1200px;
     
     @media (min-width: 320px) and (max-width: 1023px){
+        justify-content: center;
         width: 100%;
+        margin: 0 auto;
+      
+        div {
+            margin: 0rem auto;
+        }
     }
   
 `
@@ -120,11 +126,7 @@ const FooterTitleContainer = styled.div`
 `
 
 const SubTitleContainer = styled.div`
-    width: 350px;
-    
-    img {
-        margin-right: 2rem;    
-    }
+    width: 350px;   
 
     p {
         text-align: left;
@@ -132,69 +134,18 @@ const SubTitleContainer = styled.div`
         font-size: 18px;
     }
 
-    @media (min-width: 300px) and (max-width: 374px) {
-        width: 300px;
-        margin-bottom: 1rem;
-        padding: 20px 0 0 2.5%;
-
-        p {
-            font-size: 14px;
-            width: 250px;
-            margin: 0 auto;
-            text-align: center;
-        }
-    }
-
-    @media (min-width: 375px) and (max-width: 424px) {
-        width: 300px;
-        margin-bottom: 1rem;
-        padding: 20px 0 0 10%;
-
-        p {
-            font-size: 14px;
-            width: 250px;
-            margin: 0 auto;
-            text-align: center;
-        }
-    }
-
-    @media (min-width: 425px) and (max-width: 767px) {
-        width: 300px;
-        margin-bottom: 1rem;
-        padding: 20px 0 0 15%;
-
-        p {
-            font-size: 14px;
-            width: 250px;
-            margin: 0 auto;
-            text-align: center;
-        }
-    }
-
-    @media (min-width: 768px) and (max-width: 1023px) {
-        width: 300px;
-        margin-bottom: 1rem;
-        padding: 20px 0 0 30%;
-
-        p {
-            font-size: 14px;
-            width: 250px;
-            margin: 0 auto;
-            text-align: center;
-        }
-    }
-
-    @media (min-width: 1024px) and (max-width: 1339px) {
-        width: 300px;
-        margin-bottom: 1rem;
-        padding: 20px 0 0 35%;
-
-        p {
-            font-size: 14px;
-            width: 250px;
-            margin: 0 auto;
-            text-align: center;
-        }
+    @media (min-width: 320px) and (max-width: 1024px) {
+          width: 100%;
+          
+          display: flex;
+          justify-content: center;
+          align-items: center;
+    
+          p {
+                font-size: 18px;
+                width: 280px;
+                text-align: center;
+          }
     }
 `
 
