@@ -426,18 +426,24 @@ const FooterSection = styled.footer`
 
 const HeaderTypSection = styled.header`
     background-color: #121212;
-    height: 818px;
+    height: 900px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    h2 {
+    h1 {
         color: #fff;
         font-size: 36px;
         text-align: center;
         width: 850px;
+    }
+  
+    h3 {
+        color: #fff;
+        font-size: 22px;
+        text-align: center;
     }
     
 
@@ -455,55 +461,20 @@ const HeaderTypSection = styled.header`
         font-weight: bold;
     }
 
-    @media (min-width: 300px) and (max-width: 374px) {
-        height: 1200px;
+    @media (min-width: 300px) and (max-width: 1024px) {
+        height: 1260px;
 
-        h2 {
+        h1 {
             font-size: 26px;
             width: 100%;
+        }
+      
+        h3 {
+            font-size: 16px;
         }
 
         button {
             width: 70%;
-        }
-    }
-
-    @media (min-width: 375px) and (max-width: 424px) {
-        height: 1100px;
-
-        h2 {
-            font-size: 26px;
-            width: 100%;
-        }
-
-        button {
-            width: 70%;
-        }
-    }
-
-    @media (min-width: 425px) and (max-width: 767px) {
-        height: 1000px;
-
-        h2 {
-            font-size: 26px;
-            width: 100%;
-        }
-
-        button {
-            width: 400px;
-        }
-    }
-
-    @media (min-width: 768px) and (max-width: 1439px) {
-        height: 800px;
-
-        h2 {
-            font-size: 26px;
-            width: 100%;
-        }
-
-        button {
-            width: 400px;
         }
     }
 `

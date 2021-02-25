@@ -11,7 +11,8 @@ const HeaderTyp = props => {
     return (
         <HeaderTypSection>
             <div>
-                <h2>{props.title}</h2>
+                <h1>{props.title}</h1>
+                <h3>{props.subtitle}</h3>
             </div>
             {/* {width > 425 ? <iframe width="560" height="315" src={props.url} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> : <iframe width="300" height="169" src={props.url} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>} */}
 
