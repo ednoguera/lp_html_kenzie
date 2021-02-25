@@ -1,5 +1,5 @@
 import React from 'react'
-import { PreFooterSection, TitleContainer, PreFooterGroup } from '../../styles/styled-components'
+import { PreFooterSection, FooterTitleContainer, PreFooterGroup } from '../../styles/styled-components'
 import TitleImg from '../title-img/'
 import Dani from '../assets/img/icons/dani/dani.png'
 import HashtagSection from '../../components/hashtag-section/'
@@ -11,9 +11,9 @@ const PreFooter = (props) => {
     return (
         <PreFooterSection>
             <PreFooterGroup>
-                <TitleContainer>
+                <FooterTitleContainer>
                     <p>{props.title}</p>
-                </TitleContainer>
+                </FooterTitleContainer>
                 <TitleImg img={Dani} title={textTitle} />
                 <HashtagSection />
             </PreFooterGroup>

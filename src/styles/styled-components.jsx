@@ -9,9 +9,13 @@ const PageHome = styled.div`
 const HeaderApp = styled.header`
     height: 594px;
     background-color: #121212;
+  
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center; 
+  
+    
 
     @media (min-width: 300px) and (max-width: 1024px) {
         flex-direction: column;
@@ -23,9 +27,26 @@ const HeaderApp = styled.header`
     }
 `
 
+const BannerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`
+
+const HeaderContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  
+    height: 500px;
+    width: 1200px;
+`
+
+
 
 const FormContainer = styled.div`
-    
+
+
     @media (min-width: 300px) and (max-width: 1024px) {
         padding-top: 0;
         height: 150px;
@@ -34,6 +55,29 @@ const FormContainer = styled.div`
 `
 
 const TitleContainer = styled.div`
+    width: 560px;
+    
+    
+    p {
+        font-size: 48px;
+        color: #fff;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    @media (min-width: 300px) and (max-width: 1024px) {
+        width: 100%;
+        height: 250px;
+        margin: 0 auto;
+
+        p {
+            font-size: 20px;
+            width: 280px;
+            margin: 0 auto;
+        }
+    }
+`
+const FooterTitleContainer = styled.div`
     height: 242px;
     width: 560px;
     
@@ -59,7 +103,6 @@ const TitleContainer = styled.div`
 `
 
 const SubTitleContainer = styled.div`
-    display: flex;
     width: 350px;
     
     img {
@@ -70,6 +113,94 @@ const SubTitleContainer = styled.div`
         text-align: left;
         color: #fff;
         font-size: 18px;
+    }
+
+    @media (min-width: 300px) and (max-width: 374px) {
+        width: 300px;
+        margin-bottom: 1rem;
+        padding: 20px 0 0 2.5%;
+
+        p {
+            font-size: 14px;
+            width: 250px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+
+    @media (min-width: 375px) and (max-width: 424px) {
+        width: 300px;
+        margin-bottom: 1rem;
+        padding: 20px 0 0 10%;
+
+        p {
+            font-size: 14px;
+            width: 250px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+
+    @media (min-width: 425px) and (max-width: 767px) {
+        width: 300px;
+        margin-bottom: 1rem;
+        padding: 20px 0 0 15%;
+
+        p {
+            font-size: 14px;
+            width: 250px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        width: 300px;
+        margin-bottom: 1rem;
+        padding: 20px 0 0 30%;
+
+        p {
+            font-size: 14px;
+            width: 250px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+
+    @media (min-width: 1024px) and (max-width: 1339px) {
+        width: 300px;
+        margin-bottom: 1rem;
+        padding: 20px 0 0 35%;
+
+        p {
+            font-size: 14px;
+            width: 250px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+`
+
+const SubTitle2Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    
+    img {
+        margin-right: 2rem;
+        height: 5vmin;
+    }
+
+    p {
+        text-align: left;
+        color: #fff;
+        font-size: 18px;
+    }
+    
+    div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
     @media (min-width: 300px) and (max-width: 374px) {
@@ -416,6 +547,13 @@ const HeaderTypSection = styled.header`
 const Form = styled.form`
     display: flex;
     flex-direction: column;
+    padding-top: 50px;
+  
+    label {
+        font-size: 24px;
+        color: #fff;
+        font-weight: bold;
+    }
     
     @media (min-width: 300px) and (max-width: 1024px) {
         width: 100%;
@@ -528,8 +666,12 @@ const TextFinal = styled.div`
 export {
     FormContainer,
     HeaderApp,
+    HeaderContainer,
+    BannerContainer,
     TitleContainer,
+    FooterTitleContainer,
     SubTitleContainer,
+    SubTitle2Container,
     ThumbHeader,
     IconContainer,
     Section,

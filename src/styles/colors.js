@@ -1,4 +1,4 @@
 export const colors = {
-    "cian": "#5fdbfa",
-    "purple": "#a75fcb"
+    "blue": "#008ED8",
+    "orange": "#F45825"
 }
