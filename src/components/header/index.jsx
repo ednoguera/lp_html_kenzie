@@ -1,17 +1,23 @@
 import React from "react"
-import { FormContainer, HeaderApp, TitleContainer, SubTitleContainer, SubTitle2Container, ThumbHeader, HeaderContainer, BannerContainer} from '../../styles/styled-components'
+import { FormContainer, LogoContainer, HeaderApp, TitleContainer, SubTitleContainer, SubTitle2Container, ThumbHeader, HeaderContainer, BannerContainer} from '../../styles/styled-components'
 import Subscribe from '../../components/subscribe-form/subscribe'
 import logoBlue from '../assets/img/logo/logo-blue.svg'
 import ActiveCampForm from '../../components/active_campaign_form/'
+import useWindowSize from "../../helper/use-window-hook";
 
 
 
 const Header = (props) => {
 
+    const {width} = useWindowSize()
+    console.log(width)
+
     return (
         <HeaderApp>
             <BannerContainer>
-                <img src={logoBlue}/>
+                <LogoContainer>
+                    <img src={logoBlue}/>
+                </LogoContainer>
 
                 <HeaderContainer>
                     <div>
@@ -23,6 +29,7 @@ const Header = (props) => {
                         </SubTitleContainer>
                         <FormContainer>
 
+                            {width < 1024 ? <ActiveCampForm label={props.label}/> : null }
 
                             <SubTitle2Container>
                                 <div>
@@ -36,7 +43,9 @@ const Header = (props) => {
                             </SubTitle2Container>
                         </FormContainer>
                     </div>
-                    <ActiveCampForm label={props.label}/>
+
+                    {width > 1024 ? <ActiveCampForm label={props.label}/> : null}
+
                 </HeaderContainer>
             </BannerContainer>
             {/*<ThumbHeader>*/}

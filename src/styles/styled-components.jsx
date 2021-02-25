@@ -19,11 +19,7 @@ const HeaderApp = styled.header`
 
     @media (min-width: 300px) and (max-width: 1024px) {
         flex-direction: column;
-        height: 500px;
-
-        img {
-            display: none;
-        }
+        height: 550px;
     }
 `
 
@@ -31,6 +27,21 @@ const BannerContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  
+  @media (min-width: 320px) and (max-width: 1024px) {
+      width: 100%;
+  }
+`
+
+const LogoContainer = styled.figure`
+    @media (min-width: 320px) and (max-width: 1024px){
+      width: 75%;
+      padding-top: 50px;
+
+      img {
+            margin: 0 auto;
+          }
+    }
 `
 
 const HeaderContainer = styled.div`
@@ -40,6 +51,11 @@ const HeaderContainer = styled.div`
   
     height: 500px;
     width: 1200px;
+    
+    @media (min-width: 320px) and (max-width: 1023px){
+        width: 100%;
+    }
+  
 `
 
 
@@ -67,12 +83,13 @@ const TitleContainer = styled.div`
 
     @media (min-width: 300px) and (max-width: 1024px) {
         width: 100%;
-        height: 250px;
+        height: 50px;
         margin: 0 auto;
 
         p {
             font-size: 20px;
             width: 280px;
+            text-align: center;
             margin: 0 auto;
         }
     }
@@ -310,7 +327,7 @@ const Section = styled.section`
     @media (min-width: 300px) and (max-width: 1024px) {
         display: flex;
         flex-direction: column;
-        height: 800px;
+        height: 900px;
 
         p {
             font-size: 16px;
@@ -558,7 +575,7 @@ const Form = styled.form`
     @media (min-width: 300px) and (max-width: 1024px) {
         width: 100%;
         height: 250px;
-        padding: 20px 0 20px 0;
+        padding: 0px 0 0px 10px;
     }
 `
 
@@ -587,10 +604,9 @@ const Input = styled.input`
 const Button = styled.button`
     height: 64px;
     width: 410px;
-    background-color: #A337CB;
+    background-color: #F45825;
     outline: none;
     border: none;
-    background-color: #A337CB;
     border-radius: 10px;
 
     cursor: pointer;
@@ -689,5 +705,6 @@ export {
     Input,
     Button,
     OrderedList,
-    TextFinal
+    TextFinal,
+    LogoContainer
 }
