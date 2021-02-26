@@ -376,15 +376,21 @@ const HashSection = styled.div`
 `
 
 const HashStyle = styled.div`
-    font-size: 30px;
     font-weight: 900;
     color: #fff;
     margin: 0 0 0 2rem;
+  
+    h2 {
+        font-size: 30px;
+    }
 
     @media (min-width: 300px) and (max-width: 1024px) {
         display: flex;
-        font-size: 14px;
         margin: 0 auto;
+      
+      h2 {
+        font-size: 14px;
+      }
     }
 `
 
@@ -426,20 +432,29 @@ const FooterSection = styled.footer`
 
 const HeaderTypSection = styled.header`
     background-color: #121212;
-    height: 818px;
+    height: 970px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    h2 {
+    h1 {
         color: #fff;
         font-size: 36px;
         text-align: center;
         width: 850px;
     }
-    
+  
+    h3 {
+        color: #fff;
+        font-size: 22px;
+        text-align: center;
+    }
+  
+    p {
+        width: 80%;
+    }
 
     button {
         color: #fff;
@@ -453,58 +468,48 @@ const HeaderTypSection = styled.header`
         margin: 16px;
         font-size: 18px;
         font-weight: bold;
+      
+        padding-left: 0; 
     }
 
-    @media (min-width: 300px) and (max-width: 374px) {
-        height: 1200px;
+    @media (min-width: 300px) and (max-width: 424px) {
+        height: 1860px;
 
-        h2 {
+        h1 {
             font-size: 26px;
-            width: 100%;
+            width: 90%;
+            margin: 0 auto;
+        }
+      
+        h3 {
+            font-size: 16px;
+            width: 90%;
+            margin: 1rem auto;
         }
 
         button {
             width: 70%;
         }
     }
+  
+    @media (min-width: 425px) and (max-width: 1024px) {
+        height: 1550px;
 
-    @media (min-width: 375px) and (max-width: 424px) {
-        height: 1100px;
+      h1 {
+        font-size: 26px;
+        width: 90%;
+        margin: 0 auto;
+      }
 
-        h2 {
-            font-size: 26px;
-            width: 100%;
-        }
+      h3 {
+        font-size: 16px;
+        width: 90%;
+        margin: 1rem auto;
+      }
 
-        button {
-            width: 70%;
-        }
-    }
-
-    @media (min-width: 425px) and (max-width: 767px) {
-        height: 1000px;
-
-        h2 {
-            font-size: 26px;
-            width: 100%;
-        }
-
-        button {
-            width: 400px;
-        }
-    }
-
-    @media (min-width: 768px) and (max-width: 1439px) {
-        height: 800px;
-
-        h2 {
-            font-size: 26px;
-            width: 100%;
-        }
-
-        button {
-            width: 400px;
-        }
+      button {
+        width: 40%;
+      }
     }
 `
 
@@ -598,24 +603,15 @@ const TextFinal = styled.div`
     p {
         color: #fff;
         font-size: 18px;
-        width: 50%;
+        width: 78%;
         margin: 2rem auto;
         text-align: left;
         line-height: 1.6;
     }
 
-    @media (min-width: 320px) and (max-width: 374px) {
-        p {
-            color: #fff;
-            font-size: 18px;
-            width: 265px;
-            margin: 2rem 0 2rem 2rem;
-            text-align: left;
-            line-height: 1.6;
-        }
-    }
+  
 
-    @media (min-width: 375px) and (max-width: 1024px) {
+    @media (min-width: 320px) and (max-width: 1024px) {
         p {
             color: #fff;
             font-size: 18px;
