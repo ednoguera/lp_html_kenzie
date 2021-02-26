@@ -9,7 +9,8 @@ import { colors } from '../../styles/colors'
 
 const ThankYouPage = () => {
 
-    const url = "https://www.youtube.com/embed/E9HUaPeDY24"
+    const urlYoutube = "https://www.youtube.com/embed/E9HUaPeDY24"
+    const urlTelegram = "https://t.me/aprendahtmlcss"
 
     const youtubeChannel = "https://www.youtube.com/KenzieAcademyBrasil?sub_confirmation=1"
     const telegramEvent = "https://t.me/semanaZeroAoJS"
@@ -24,7 +25,7 @@ const ThankYouPage = () => {
     const item2 = <p>2. <strong>Entre no seu e-mail e abra o email de boas vindas que enviamos.</strong> Recomendo colocar uma estrela amarela ou favoritar este e-mail para que o seu servidor entenda que as nossas mensagens são importantes para você. Confira caixa de spam e caixa de promoções. </p>
 
     const textFinal1 = <p><strong style={{"color": orange}}>E tudo isso pra que?</strong> Por que eu quero garantir que você vai receber todas as minhas mensagens e outros bônus que eu também vou te enviar.</p>
-    const textFinal2 = <p>Então é isso, siga exatamente essas instruções e nos vemos no <strong style={{"color": blue}}>dia 22 de Março</strong>, combinado?</p>
+    const textFinal2 = <p>Então é isso, siga exatamente essas instruções e nos vemos no <strong style={{"color": blue}}>dia 25 de Março</strong>, combinado?</p>
     const textFinal3 = <p>Clique no botão abaixo e <strong style={{"color": blue}}>inscreva-se em nosso canal no Youtube</strong> para acompanhar nosso conteúdo e nossas lives.</p>
 
     return (
@@ -35,7 +36,7 @@ const ThankYouPage = () => {
                        textFinal1={textFinal1}
                        textFinal2={textFinal2}
                        textFinal3={textFinal3}
-                       url={url} urlYoutube={youtubeChannel} urlTelegram={telegramEvent}
+                       urlYoutube={urlYoutube} urlTelegram={urlTelegram}
                        ctaTelegram="Entrar em nossa comunidade no telegram"
                        ctaYoutube="Inscreva-se em nosso canal no Youtube"
                        styleBtnTelegram={{
