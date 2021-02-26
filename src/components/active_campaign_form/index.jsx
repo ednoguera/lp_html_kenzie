@@ -3,7 +3,7 @@ import { Form, Input, Button } from '../../styles/styled-components'
 
 const ActiveCampForm = (props) => {
     return (
-        <Form method="POST" action="https://kenzie39049.activehosted.com/proc.php" id="_form_1_" className="_form _form_1 _inline-form  _dark" noValidate>
+        <Form method="POST" action="https://kenzie39049.activehosted.com/proc.php" id="_form_1_" className="_form _form_1 _inline-form  _dark" validate>
             <input type="hidden" name="u" value="1" />
             <input type="hidden" name="f" value="1" />
             <input type="hidden" name="s" />
@@ -14,9 +14,9 @@ const ActiveCampForm = (props) => {
 
 
             <label>{props.label}</label>
-            <Input type="text" name="nome" placeholder="Nome" required />
-            <Input type="text" name="email" placeholder="Email" required />
-            <Input type="text" name="telefone" placeholder="Telefone" required />
+            <Input type="text" name="nome" placeholder="Nome" required="Nome é necessário" />
+            <Input type="text" name="email" placeholder="Email" required="Email necessário" />
+            <Input type="text" name="telefone" placeholder="Telefone" required="Telefone necessário" />
 
             <Button id="_form_1_submit" class="_submit" type="submit">
                 Fazer meu cadastro
