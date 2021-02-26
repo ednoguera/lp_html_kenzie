@@ -66,9 +66,9 @@ const HeaderContainer = styled.div`
 const FormContainer = styled.div`
 
 
-    @media (min-width: 300px) and (max-width: 1024px) {
-        padding-top: 0;
-        height: 150px;
+    @media (min-width: 320px) and (max-width: 1024px) {
+        padding-bottom: 10px;
+        height: 100px;
     }
     
 `
@@ -133,6 +133,7 @@ const SubTitleContainer = styled.div`
 
     @media (min-width: 320px) and (max-width: 1024px) {
           width: 100%;
+          height: 150px;
           
           display: flex;
           justify-content: center;
@@ -259,9 +260,13 @@ const IconContainer = styled.div`
         width: 283px; 
     }
 
-    @media (min-width: 300px) and (max-width: 1024px) {
-       margin: 12px;
+    @media (min-width: 320px) and (max-width: 1024px) {
+       margin: 10px;
        width: 280px;
+       
+        div {
+          padding-top: 2rem;
+        }
     }
 `
 
@@ -275,7 +280,7 @@ const Section = styled.section`
     @media (min-width: 300px) and (max-width: 1024px) {
         display: flex;
         flex-direction: column;
-        height: 900px;
+        height: 1050px;
 
         p {
             font-size: 16px;

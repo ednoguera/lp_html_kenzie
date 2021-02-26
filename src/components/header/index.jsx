@@ -31,11 +31,11 @@ const Header = (props) => {
 
                             <SubTitle2Container>
                                 <div>
-                                    <img src={props.getImage1} />
+                                    {width >= 768 ? <img src={props.getImage1} /> : null}
                                     <p>{props.subTitle1}</p>
                                 </div>
                                 <div>
-                                    <img src={props.getImage2} />
+                                    {width >= 768 ? <img src={props.getImage2} /> : null}
                                     <p>{props.subTitle2}</p>
                                 </div>
                             </SubTitle2Container>
@@ -46,12 +46,6 @@ const Header = (props) => {
 
                 </HeaderContainer>
             </BannerContainer>
-            {/*<ThumbHeader>*/}
-            {/*    <img src={props.thumb} />*/}
-            {/*</ThumbHeader>*/}
-            {/*<Subscribe />*/}
-
-
 
         </HeaderApp>
     )
