@@ -11,14 +11,17 @@ const ActiveCampForm = (props) => {
 
     const url = "https://kenzie39049.activehosted.com/proc.php"
 
-    const {pathname} = useLocation()
+    // const pathname = "https://startsuacarreira.kenzie.com.br/?utm_source=teste&utm_medium=utmbuilder&utm_campaign=daniel"
+    const pathname = window.location.href
     console.log(pathname)
 
+    let paramsUrl
+    let params
 
     function getParams(pathname) {
-        if (pathname.length > 1) {
-                const paramsUrl = pathname.split("?")[1]
-                const params = paramsUrl.split("&")
+        if (pathname !== "http://localhost:3000/") {
+                paramsUrl = pathname.split("?")[1]
+                params = paramsUrl.split("&")
 
                 setUtmSource(params[0].split("=")[1])
                 setUtmMedium(params[1].split("=")[1])
