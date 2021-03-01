@@ -10,15 +10,11 @@ import { colors } from '../../styles/colors'
 
 const ThankYouPage = () => {
     const location = useLocation()
-    console.log(location.pathname)
-
-    location.pathname == "obrigado" ? console.log(true) : console.log(false)
-
+    
     const urlYoutube = "https://www.youtube.com/KenzieAcademyBrasil?sub_confirmation=1"
     const urlTelegram = "https://curso-html-css.joinzap.app/"
 
-    const {blue} = colors
-    const {orange} = colors
+    const {blue, orange, green} = colors
 
     const textTitle = <h1>Sua participação ainda <strong style={{"color": blue}}>não está confirmada!</strong></h1>
     const textSubTitle = <h3>Siga o passo a passo para garantir sua inscrição gratuita.</h3>
@@ -42,7 +38,7 @@ const ThankYouPage = () => {
                        ctaTelegram="Entre no nosso grupo silencioso do Whatsapp"
                        ctaYoutube="Inscreva-se em nosso canal no Youtube"
                        styleBtnTelegram={{
-                           "backgroundColor": blue
+                           "backgroundColor": green
                        }}
                        styleBtnYoutube={{
                            "backgroundColor": orange
