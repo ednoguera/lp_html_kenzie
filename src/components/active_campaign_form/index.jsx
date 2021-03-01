@@ -21,8 +21,8 @@ const ActiveCampForm = (props) => {
     console.log(parameters.utm_medium)
     console.log(parameters.utm_campaign)
 
-    const paramsMaker = pathname => {
-        if (pathname.length() > 1) {
+    const getParamns = pathname => {
+        if (pathname.length > 1) {
             newUrl = url.split("?")
             urlParams = newUrl[1]
             params = urlParams.split("&")
@@ -37,6 +37,7 @@ const ActiveCampForm = (props) => {
         }
     }
 
+    getParamns(pathname)
 
 
     const {orange} = colors
