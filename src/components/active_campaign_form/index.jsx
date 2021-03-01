@@ -14,8 +14,6 @@ const ActiveCampForm = (props) => {
     // const pathname = "https://startsuacarreira.kenzie.com.br/?utm_source=teste&utm_medium=utmbuilder&utm_campaign=daniel"
     const pathname = window.location.href
 
-    console.log(pathname)
-
     let paramsUrl = false
     let params = false
 
@@ -28,10 +26,6 @@ const ActiveCampForm = (props) => {
                 setUtmMedium(params[1].split("=")[1])
                 setUtmCampaign(params[2].split("=")[1])
             }
-
-        console.log(utmSource)
-        console.log(utmMedium)
-        console.log(utmCampaign)
     }
 
 
