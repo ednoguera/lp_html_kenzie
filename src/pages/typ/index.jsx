@@ -15,7 +15,7 @@ const ThankYouPage = () => {
     location.pathname == "obrigado" ? console.log(true) : console.log(false)
 
     const urlYoutube = "https://www.youtube.com/KenzieAcademyBrasil?sub_confirmation=1"
-    const urlTelegram = "https://t.me/aprendahtmlcss"
+    const urlTelegram = "https://curso-html-css.joinzap.app/"
 
     const {blue} = colors
     const {orange} = colors
@@ -39,7 +39,7 @@ const ThankYouPage = () => {
                        textFinal2={textFinal2}
                        textFinal3={textFinal3}
                        urlYoutube={urlYoutube} urlTelegram={urlTelegram}
-                       ctaTelegram="Entrar em nossa comunidade no telegram"
+                       ctaTelegram="Entre no nosso grupo silencioso do Whatsapp"
                        ctaYoutube="Inscreva-se em nosso canal no Youtube"
                        styleBtnTelegram={{
                            "backgroundColor": blue
