@@ -5,7 +5,38 @@ import {colors} from "../../styles/colors";
 
 const ActiveCampForm = (props) => {
     const [defaultMsg, setDefaultMsg] = useState(null)
+    const [parameters, setParameters] = useState({
+        "utm_source": null,
+        "utm_medium": null,
+        "utm_campaign": null
+    })
     const url = "https://kenzie39049.activehosted.com/proc.php"
+
+    const {pathname} = useLocation()
+    let newUrl
+    let urlParams
+    let params
+
+    console.log(parameters.utm_source)
+    console.log(parameters.utm_medium)
+    console.log(parameters.utm_campaign)
+
+    const paramsMaker = pathname => {
+        if (pathname.length() > 1) {
+            newUrl = url.split("?")
+            urlParams = newUrl[1]
+            params = urlParams.split("&")
+
+            setParameters(
+                parameters.utm_source = params[0].split("=")[1],
+                parameters.utm_medium = params[1].split("=")[1],
+                parameters.utm_campaign = params[2].split("=")[1]
+            )
+
+            // console.log(params[1].split("=")[1])
+        }
+    }
+
 
 
     const {orange} = colors
