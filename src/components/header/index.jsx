@@ -10,7 +10,6 @@ import useWindowSize from "../../helper/use-window-hook";
 const Header = (props) => {
 
     const {width} = useWindowSize()
-    console.log(width)
 
     return (
         <HeaderApp>
