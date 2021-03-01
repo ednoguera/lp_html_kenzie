@@ -1,4 +1,5 @@
 import React from 'react'
+import {useLocation} from 'react-router-dom'
 import HeaderTyp from '../../components/header_typ/'
 import Footer from '../../components/footer/'
 import logo from '../../components/assets/img/logo/logo.svg'
@@ -8,6 +9,10 @@ import linkedin from '../../components/assets/img/social/linkedin.png'
 import { colors } from '../../styles/colors'
 
 const ThankYouPage = () => {
+    const location = useLocation()
+    console.log(location.pathname)
+
+    location.pathname == "obrigado" ? console.log(true) : console.log(false)
 
     const urlYoutube = "https://www.youtube.com/KenzieAcademyBrasil?sub_confirmation=1"
     const urlTelegram = "https://t.me/aprendahtmlcss"
