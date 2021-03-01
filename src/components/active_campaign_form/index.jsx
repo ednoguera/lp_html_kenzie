@@ -1,11 +1,26 @@
 import React, {useState} from 'react'
+import {useParams, useLocation} from 'react-router-dom'
 import { Form, Input, Button } from '../../styles/styled-components'
 import {colors} from "../../styles/colors";
+import {fields} from "../../services/utm-fields";
 
 const ActiveCampForm = (props) => {
     const [defaultMsg, setDefaultMsg] = useState(null)
     const url = "https://kenzie39049.activehosted.com/proc.php"
-    console.log(defaultMsg)
+
+    const {pathname} = useLocation()
+
+    const urlTrack = pathname
+
+    const newUrl = urlTrack.split("?") //separa a url em duas partes, tendo a interrogação como divisor.
+    const urlParams = newUrl[1] //Pega a segunda posição do array, divido com o "?".
+    const params = urlParams.split("&") // Divide a string com "&".
+    // Você pode utilizar os parametros usando a segunda posição deste array nos values do form
+
+    console.log(newUrl)
+    console.log(urlParams)
+    console.log(params)
+
 
     const {orange} = colors
 
@@ -21,7 +36,7 @@ const ActiveCampForm = (props) => {
     }
 
     return (
-        <Form method="POST" action={url}  validate>
+        <Form method="POST" action={url}  id="_form_1_" className="_form _form_1 _inline-form  " validate>
             <input type="hidden" name="u" value="1" />
             <input type="hidden" name="f" value="1" />
             <input type="hidden" name="s" />
@@ -51,6 +66,7 @@ const ActiveCampForm = (props) => {
             {defaultMsg === true ? props.width >= 650 ? <h3 style={{"color": orange}}>Você precisa preencher todos os campos </h3> :
                error  : null}
 
+            {/*{fields()}*/}
 
         </Form>
     )
