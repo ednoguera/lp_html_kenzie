@@ -12,7 +12,7 @@ const ActiveCampForm = (props) => {
     const url = "https://kenzie39049.activehosted.com/proc.php"
 
     const {pathname} = useLocation()
-    console.log(pathname.length)
+    console.log(pathname)
 
 
     function getParams(pathname) {
