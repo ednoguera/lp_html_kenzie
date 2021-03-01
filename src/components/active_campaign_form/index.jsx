@@ -5,13 +5,12 @@ import {colors} from "../../styles/colors";
 
 const ActiveCampForm = (props) => {
     const [defaultMsg, setDefaultMsg] = useState(null)
-    const [utmSource, setUtmSource] = useState("local")
-    const [utmMedium, setUtmMedium] = useState("local")
-    const [utmCampaign, setUtmCampaign] = useState("local")
+    const [utmSource, setUtmSource] = useState("no-tracking")
+    const [utmMedium, setUtmMedium] = useState("no-tracking")
+    const [utmCampaign, setUtmCampaign] = useState("no-tracking")
 
     const url = "https://kenzie39049.activehosted.com/proc.php"
 
-    // const pathname = "https://startsuacarreira.kenzie.com.br/?utm_source=teste&utm_medium=utmbuilder&utm_campaign=daniel"
     const pathname = window.location.href
 
     let paramsUrl = false

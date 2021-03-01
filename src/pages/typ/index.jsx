@@ -10,7 +10,7 @@ import { colors } from '../../styles/colors'
 
 const ThankYouPage = () => {
     const location = useLocation()
-    
+
     const urlYoutube = "https://www.youtube.com/KenzieAcademyBrasil?sub_confirmation=1"
     const urlTelegram = "https://curso-html-css.joinzap.app/"
 
