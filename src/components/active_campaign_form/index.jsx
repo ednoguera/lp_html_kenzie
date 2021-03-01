@@ -5,37 +5,32 @@ import {colors} from "../../styles/colors";
 
 const ActiveCampForm = (props) => {
     const [defaultMsg, setDefaultMsg] = useState(null)
-    const [parameters, setParameters] = useState({
-        "utm_source": null,
-        "utm_medium": null,
-        "utm_campaign": null
-    })
+    const [utmSource, setUtmSource] = useState("local")
+    const [utmMedium, setUtmMedium] = useState("local")
+    const [utmCampaign, setUtmCampaign] = useState("local")
+
     const url = "https://kenzie39049.activehosted.com/proc.php"
 
     const {pathname} = useLocation()
+    console.log(pathname.length)
 
-    if (pathname > 1) {
-        const paramsUrl = pathname.split("?")[1]
-        const params = paramsUrl.split("&")
 
-        console.log(params[0].split("=")[1])
-        console.log(params[1].split("=")[1])
-        console.log(params[2].split("=")[1])
+    function getParams(pathname) {
+        if (pathname.length > 1) {
+                const paramsUrl = pathname.split("?")[1]
+                const params = paramsUrl.split("&")
+
+                setUtmSource(params[0].split("=")[1])
+                setUtmMedium(params[1].split("=")[1])
+                setUtmCampaign(params[2].split("=")[1])
+            }
+
+        console.log(utmSource)
+        console.log(utmMedium)
+        console.log(utmCampaign)
     }
 
-
-
-    // const getParams = pathname => {
-    //     setParameters(
-    //             parameters.utm_source = params[0].split("=")[1],
-    //             parameters.utm_medium = params[1].split("=")[1],
-    //             parameters.utm_campaign = params[2].split("=")[1]
-    //     )
-    //         // console.log(params[1].split("=")[1])
-    // }
-    //
-    // getParams(pathname)
-
+    getParams(pathname)
 
 
     const {orange} = colors
@@ -68,13 +63,13 @@ const ActiveCampForm = (props) => {
             <Input type="text" name="email" placeholder="Email" required onInvalid={onFieldBlank}/>
             {/*<Input type="text" name="phone" placeholder="Telefone" required onInvalid={onFieldBlank}/>*/}
             <div className="_form_element _field1 _full_width " >
-                <input type="hidden" name="field[1]" value="" />
+                <input type="hidden" name="field[1]" value={utmSource} />
             </div>
             <div className="_form_element _field3 _full_width " >
-                <input type="hidden" name="field[3]" value="" />
+                <input type="hidden" name="field[3]" value={utmMedium} />
             </div>
             <div className="_form_element _field4 _full_width " >
-                <input type="hidden" name="field[4]" value="" />
+                <input type="hidden" name="field[4]" value={utmCampaign} />
             </div>
             <Button id="_form_1_submit" class="_submit" type="submit">
                 Fazer meu cadastro
