@@ -10,7 +10,7 @@ const Subscribe = () => {
 
 
 
-    const url = "https://kenzie80793.api-us1.com/api/3/contacts"
+    const url = "https://kenzie39049.api-us1.com/api/3/contacts"
 
     const handleSubmit = e => {
         e.preventDefault()

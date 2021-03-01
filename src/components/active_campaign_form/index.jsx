@@ -1,9 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Form, Input, Button } from '../../styles/styled-components'
+import {colors} from "../../styles/colors";
 
 const ActiveCampForm = (props) => {
+    const [defaultMsg, setDefaultMsg] = useState(null)
+    const url = "https://kenzie39049.activehosted.com/proc.php"
+    console.log(defaultMsg)
+
+    const {orange} = colors
+
+    const error = <p style={{"color": orange, "font-size": "14px"}}>Você precisa preencher todos os campos</p>
+
+    const onFieldBlank = e => {
+        e.preventDefault()
+
+        if (e.target.placeholder === "Email") {
+            setDefaultMsg(true)
+        }
+
+    }
+
     return (
-        <Form method="POST" action="https://kenzie39049.activehosted.com/proc.php" id="_form_1_" className="_form _form_1 _inline-form  _dark" validate>
+        <Form method="POST" action={url}  validate>
             <input type="hidden" name="u" value="1" />
             <input type="hidden" name="f" value="1" />
             <input type="hidden" name="s" />
@@ -13,22 +31,35 @@ const ActiveCampForm = (props) => {
             <input type="hidden" name="v" value="2" />
 
 
-            <label>{props.label}</label>
-            <Input type="text" name="nome" placeholder="Nome" required="Nome é necessário" />
-            <Input type="text" name="email" placeholder="Email" required="Email necessário" />
-            <Input type="text" name="telefone" placeholder="Telefone" required="Telefone necessário" />
 
+            <label>{props.label}</label>
+            {/*<Input type="text" name="fullname" placeholder="Nome" required onInvalid={onFieldBlank} />*/}
+            <Input type="text" name="email" placeholder="Email" required onInvalid={onFieldBlank}/>
+            {/*<Input type="text" name="phone" placeholder="Telefone" required onInvalid={onFieldBlank}/>*/}
+            <div className="_form_element _field1 _full_width " >
+                <input type="hidden" name="field[1]" value="" />
+            </div>
+            <div className="_form_element _field3 _full_width " >
+                <input type="hidden" name="field[3]" value="" />
+            </div>
+            <div className="_form_element _field4 _full_width " >
+                <input type="hidden" name="field[4]" value="" />
+            </div>
             <Button id="_form_1_submit" class="_submit" type="submit">
                 Fazer meu cadastro
             </Button>
+            {defaultMsg === true ? props.width >= 650 ? <h3 style={{"color": orange}}>Você precisa preencher todos os campos </h3> :
+               error  : null}
+
+
         </Form>
     )
 }
 
 export default ActiveCampForm
 
-// <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
-// <form method="POST" action="https://kenzie39049.activehosted.com/proc.php" id="_form_1_" className="_form _form_1 _inline-form  _dark" noValidate>
+
+// <form method="POST" action="https://kenzie39049.activehosted.com/proc.php" id="_form_1_" className="_form _form_1 _inline-form  " noValidate>
 // <input type="hidden" name="u" value="1" />
 // <input type="hidden" name="f" value="1" />
 // <input type="hidden" name="s" />
@@ -37,27 +68,9 @@ export default ActiveCampForm
 // <input type="hidden" name="act" value="sub" />
 // <input type="hidden" name="v" value="2" />
 // <div className="_form-content">
-// <div className="_form_element _x34930459 _full_width _clear" >
-// <div className="_html-code">
-// <p>
-// Adicione uma mensagem descritiva dizendo o que seu visitante pode esperar aqui.
-// </p>
-// </div>
-// </div>
-// <div className="_form_element _x49145981 _full_width " >
-// <label className="_form-label">
-// Nome completo
-// </label>
-// <div className="_field-wrapper">
-// <input type="text" name="fullname" placeholder="Digite seu nome" />
-// </div>
-// </div>
-// <div className="_form_element _x94312672 _full_width " >
-// <label className="_form-label">
-// Telefone*
-// </label>
-// <div className="_field-wrapper">
-// <input type="text" name="phone" placeholder="Digite seu telefone" required/>
+// <div className="_form_element _x01124389 _full_width _clear" >
+// <div className="_form-title">
+// Participe Gratuitamente!
 // </div>
 // </div>
 // <div className="_form_element _x88027164 _full_width " >
@@ -71,6 +84,12 @@ export default ActiveCampForm
 // <div className="_form_element _field1 _full_width " >
 // <input type="hidden" name="field[1]" value="" />
 // </div>
+// <div className="_form_element _field3 _full_width " >
+// <input type="hidden" name="field[3]" value="" />
+// </div>
+// <div className="_form_element _field4 _full_width " >
+// <input type="hidden" name="field[4]" value="" />
+// </div>
 // <div className="_button-wrapper _full_width">
 // <button id="_form_1_submit" className="_submit" type="submit">
 // Enviar
@@ -81,6 +100,21 @@ export default ActiveCampForm
 // </div>
 // <div className="_form-thank-you" style="display:none;">
 // </div>
+// </form><script type="text/javascript">
+// window.cfields = {"1":"utmsource","3":"utmcampaign","4":"utmmedium"};
+// window._show_thank_you = function(id, message, trackcmp_url, email) {
+// var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
+// form.querySelector('._form-content').style.display = 'none';
+// thank_you.innerHTML = message;
+// thank_you.style.display = 'block';
+// const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
+// var visitorObject = window[vgoAlias];
+// if (email && typeof visitorObject !== 'undefined') {
+// visitorObject('setEmail', email);
+// visitorObject('update');
+// } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
+// // Site tracking URL to use after inline form submission.
+// _load_script(trackcmp_url);
 // }
 // if (typeof window._form_callback !== 'undefined') window._form_callback(id);
 // };
@@ -106,4 +140,288 @@ export default ActiveCampForm
 // script.type = 'text/javascript';
 // script.charset = 'utf-8';
 // script.src = url;
-// </form>
+// if (callback) {
+// script.onload = script.onreadystatechange = function() {
+// if (!r && (!this.readyState || this.readyState == 'complete')) {
+// r = true;
+// callback();
+// }
+// };
+// }
+// head.appendChild(script);
+// };
+// (function() {
+// if (window.location.search.search("excludeform") !== -1) return false;
+// var getCookie = function(name) {
+// var match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
+// return match ? match[2] : null;
+// }
+// var setCookie = function(name, value) {
+// var now = new Date();
+// var time = now.getTime();
+// var expireTime = time + 1000 * 60 * 60 * 24 * 365;
+// now.setTime(expireTime);
+// document.cookie = name + '=' + value + '; expires=' + now + ';path=/';
+// }
+// var addEvent = function(element, event, func) {
+// if (element.addEventListener) {
+// element.addEventListener(event, func);
+// } else {
+// var oldFunc = element['on' + event];
+// element['on' + event] = function() {
+// oldFunc.apply(this, arguments);
+// func.apply(this, arguments);
+// };
+// }
+// }
+// var _removed = false;
+// var form_to_submit = document.getElementById('_form_1_');
+// var allInputs = form_to_submit.querySelectorAll('input, select, textarea'), tooltips = [], submitted = false;
+//
+// var getUrlParam = function(name) {
+// var regexStr = '[\?&]' + name + '=([^&#]*)';
+// var results = new RegExp(regexStr, 'i').exec(window.location.href);
+// return results != undefined ? decodeURIComponent(results[1]) : false;
+// };
+//
+// for (var i = 0; i < allInputs.length; i++) {
+// var regexStr = "field\\[(\\d+)\\]";
+// var results = new RegExp(regexStr).exec(allInputs[i].name);
+// if (results != undefined) {
+// allInputs[i].dataset.name = window.cfields[results[1]];
+// } else {
+// allInputs[i].dataset.name = allInputs[i].name;
+// }
+// var fieldVal = getUrlParam(allInputs[i].dataset.name);
+//
+// if (fieldVal) {
+// if (allInputs[i].dataset.autofill === "false") {
+// continue;
+// }
+// if (allInputs[i].type == "radio" || allInputs[i].type == "checkbox") {
+// if (allInputs[i].value == fieldVal) {
+// allInputs[i].checked = true;
+// }
+// } else {
+// allInputs[i].value = fieldVal;
+// }
+// }
+// }
+//
+// var remove_tooltips = function() {
+// for (var i = 0; i < tooltips.length; i++) {
+// tooltips[i].tip.parentNode.removeChild(tooltips[i].tip);
+// }
+// tooltips = [];
+// };
+// var remove_tooltip = function(elem) {
+// for (var i = 0; i < tooltips.length; i++) {
+// if (tooltips[i].elem === elem) {
+// tooltips[i].tip.parentNode.removeChild(tooltips[i].tip);
+// tooltips.splice(i, 1);
+// return;
+// }
+// }
+// };
+// var create_tooltip = function(elem, text) {
+// var tooltip = document.createElement('div'), arrow = document.createElement('div'), inner = document.createElement('div'), new_tooltip = {};
+// if (elem.type != 'radio' && elem.type != 'checkbox') {
+// tooltip.className = '_error';
+// arrow.className = '_error-arrow';
+// inner.className = '_error-inner';
+// inner.innerHTML = text;
+// tooltip.appendChild(arrow);
+// tooltip.appendChild(inner);
+// elem.parentNode.appendChild(tooltip);
+// } else {
+// tooltip.className = '_error-inner _no_arrow';
+// tooltip.innerHTML = text;
+// elem.parentNode.insertBefore(tooltip, elem);
+// new_tooltip.no_arrow = true;
+// }
+// new_tooltip.tip = tooltip;
+// new_tooltip.elem = elem;
+// tooltips.push(new_tooltip);
+// return new_tooltip;
+// };
+// var resize_tooltip = function(tooltip) {
+// var rect = tooltip.elem.getBoundingClientRect();
+// var doc = document.documentElement, scrollPosition = rect.top - ((window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0));
+// if (scrollPosition < 40) {
+// tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _below';
+// } else {
+// tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _above';
+// }
+// };
+// var resize_tooltips = function() {
+// if (_removed) return;
+// for (var i = 0; i < tooltips.length; i++) {
+// if (!tooltips[i].no_arrow) resize_tooltip(tooltips[i]);
+// }
+// };
+// var validate_field = function(elem, remove) {
+// var tooltip = null, value = elem.value, no_error = true;
+// remove ? remove_tooltip(elem) : false;
+// if (elem.type != 'checkbox') elem.className = elem.className.replace(/ ?_has_error ?/g, '');
+// if (elem.getAttribute('required') !== null) {
+// if (elem.type == 'radio' || (elem.type == 'checkbox' && /any/.test(elem.className))) {
+// var elems = form_to_submit.elements[elem.name];
+// if (!(elems instanceof NodeList || elems instanceof HTMLCollection) || elems.length <= 1) {
+// no_error = elem.checked;
+// }
+// else {
+// no_error = false;
+// for (var i = 0; i < elems.length; i++) {
+// if (elems[i].checked) no_error = true;
+// }
+// }
+// if (!no_error) {
+// tooltip = create_tooltip(elem, "Por favor, selecione uma opção.");
+// }
+// } else if (elem.type =='checkbox') {
+// var elems = form_to_submit.elements[elem.name], found = false, err = [];
+// no_error = true;
+// for (var i = 0; i < elems.length; i++) {
+// if (elems[i].getAttribute('required') === null) continue;
+// if (!found && elems[i] !== elem) return true;
+// found = true;
+// elems[i].className = elems[i].className.replace(/ ?_has_error ?/g, '');
+// if (!elems[i].checked) {
+// no_error = false;
+// elems[i].className = elems[i].className + ' _has_error';
+// err.push("Marcar %s é necessário".replace("%s", elems[i].value));
+// }
+// }
+// if (!no_error) {
+// tooltip = create_tooltip(elem, err.join('<br/>'));
+// }
+// } else if (elem.tagName == 'SELECT') {
+// var selected = true;
+// if (elem.multiple) {
+// selected = false;
+// for (var i = 0; i < elem.options.length; i++) {
+// if (elem.options[i].selected) {
+// selected = true;
+// break;
+// }
+// }
+// } else {
+// for (var i = 0; i < elem.options.length; i++) {
+// if (elem.options[i].selected && !elem.options[i].value) {
+// selected = false;
+// }
+// }
+// }
+// if (!selected) {
+// elem.className = elem.className + ' _has_error';
+// no_error = false;
+// tooltip = create_tooltip(elem, "Por favor, selecione uma opção.");
+// }
+// } else if (value === undefined || value === null || value === '') {
+// elem.className = elem.className + ' _has_error';
+// no_error = false;
+// tooltip = create_tooltip(elem, "Este campo é necessário.");
+// }
+// }
+// if (no_error && elem.name == 'email') {
+// if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)) {
+// elem.className = elem.className + ' _has_error';
+// no_error = false;
+// tooltip = create_tooltip(elem, "Digite um e-mail válido");
+// }
+// }
+// if (no_error && /date_field/.test(elem.className)) {
+// if (!value.match(/^\d\d\d\d-\d\d-\d\d$/)) {
+// elem.className = elem.className + ' _has_error';
+// no_error = false;
+// tooltip = create_tooltip(elem, "Digite uma data válida.");
+// }
+// }
+// tooltip ? resize_tooltip(tooltip) : false;
+// return no_error;
+// };
+// var needs_validate = function(el) {
+// if(el.getAttribute('required') !== null){
+// return true
+// }
+// if(el.name === 'email' && el.value !== ""){
+// return true
+// }
+// return false
+// };
+// var validate_form = function(e) {
+// var err = form_to_submit.querySelector('._form_error'), no_error = true;
+// if (!submitted) {
+// submitted = true;
+// for (var i = 0, len = allInputs.length; i < len; i++) {
+// var input = allInputs[i];
+// if (needs_validate(input)) {
+// if (input.type == 'text') {
+// addEvent(input, 'blur', function() {
+// this.value = this.value.trim();
+// validate_field(this, true);
+// });
+// addEvent(input, 'input', function() {
+// validate_field(this, true);
+// });
+// } else if (input.type == 'radio' || input.type == 'checkbox') {
+// (function(el) {
+// var radios = form_to_submit.elements[el.name];
+// for (var i = 0; i < radios.length; i++) {
+// addEvent(radios[i], 'click', function() {
+// validate_field(el, true);
+// });
+// }
+// })(input);
+// } else if (input.tagName == 'SELECT') {
+// addEvent(input, 'change', function() {
+// validate_field(this, true);
+// });
+// } else if (input.type == 'textarea'){
+// addEvent(input, 'input', function() {
+// validate_field(this, true);
+// });
+// }
+// }
+// }
+// }
+// remove_tooltips();
+// for (var i = 0, len = allInputs.length; i < len; i++) {
+// var elem = allInputs[i];
+// if (needs_validate(elem)) {
+// if (elem.tagName.toLowerCase() !== "select") {
+// elem.value = elem.value.trim();
+// }
+// validate_field(elem) ? true : no_error = false;
+// }
+// }
+// if (!no_error && e) {
+// e.preventDefault();
+// }
+// resize_tooltips();
+// return no_error;
+// };
+// addEvent(window, 'resize', resize_tooltips);
+// addEvent(window, 'scroll', resize_tooltips);
+// window._old_serialize = null;
+// if (typeof serialize !== 'undefined') window._old_serialize = window.serialize;
+// _load_script("//d3rxaij56vjege.cloudfront.net/form-serialize/0.3/serialize.min.js", function() {
+// window._form_serialize = window.serialize;
+// if (window._old_serialize) window.serialize = window._old_serialize;
+// });
+// var form_submit = function(e) {
+// e.preventDefault();
+// if (validate_form()) {
+// // use this trick to get the submit button & disable it using plain javascript
+// document.querySelector('#_form_1_submit').disabled = true;
+// var serialized = _form_serialize(document.getElementById('_form_1_'));
+// var err = form_to_submit.querySelector('._form_error');
+// err ? err.parentNode.removeChild(err) : false;
+// _load_script('https://kenzie39049.activehosted.com/proc.php?' + serialized + '&jsonp=true');
+// }
+// return false;
+// };
+// addEvent(form_to_submit, 'submit', form_submit);
+// })();
+//
+// </script>

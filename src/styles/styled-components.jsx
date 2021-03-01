@@ -20,7 +20,7 @@ const HeaderApp = styled.header`
     @media (min-width: 300px) and (max-width: 1024px) {
         padding-top: 20px;
         justify-content: flex-start;
-        height: 720px;
+        height: 600px;
     }
 `
 
@@ -66,9 +66,9 @@ const HeaderContainer = styled.div`
 const FormContainer = styled.div`
 
 
-    @media (min-width: 300px) and (max-width: 1024px) {
-        padding-top: 0;
-        height: 150px;
+    @media (min-width: 320px) and (max-width: 1024px) {
+        padding-bottom: 10px;
+        height: 100px;
     }
     
 `
@@ -133,6 +133,7 @@ const SubTitleContainer = styled.div`
 
     @media (min-width: 320px) and (max-width: 1024px) {
           width: 100%;
+          height: 150px;
           
           display: flex;
           justify-content: center;
@@ -168,10 +169,10 @@ const SubTitle2Container = styled.div`
         align-items: center;
     }
 
-    @media (min-width: 300px) and (max-width: 374px) {
+    @media (min-width: 320px) and (max-width: 1024px) {
         width: 300px;
         margin-bottom: 1rem;
-        padding: 20px 0 0 2.5%;
+        padding-bottom: 100px;
 
         p {
             font-size: 14px;
@@ -179,59 +180,12 @@ const SubTitle2Container = styled.div`
             margin: 0 auto;
             text-align: center;
         }
-    }
-
-    @media (min-width: 375px) and (max-width: 424px) {
-        width: 300px;
-        margin-bottom: 1rem;
-        padding: 20px 0 0 10%;
-
-        p {
-            font-size: 14px;
-            width: 250px;
-            margin: 0 auto;
-            text-align: center;
+      
+        img {
+          display: none;
         }
     }
-
-    @media (min-width: 425px) and (max-width: 767px) {
-        width: 300px;
-        margin-bottom: 1rem;
-        padding: 20px 0 0 15%;
-
-        p {
-            font-size: 14px;
-            width: 250px;
-            margin: 0 auto;
-            text-align: center;
-        }
-    }
-
-    @media (min-width: 768px) and (max-width: 1023px) {
-        width: 300px;
-        margin-bottom: 1rem;
-        padding: 20px 0 0 30%;
-
-        p {
-            font-size: 14px;
-            width: 250px;
-            margin: 0 auto;
-            text-align: center;
-        }
-    }
-
-    @media (min-width: 1024px) and (max-width: 1339px) {
-        width: 300px;
-        margin-bottom: 1rem;
-        padding: 20px 0 0 35%;
-
-        p {
-            font-size: 14px;
-            width: 250px;
-            margin: 0 auto;
-            text-align: center;
-        }
-    }
+    
 `
 
 const ThumbHeader = styled.figure`
@@ -256,12 +210,26 @@ const IconContainer = styled.div`
     p {
         font-size: 18px;
         color: #fff;
-        width: 283px; 
+        width: 283px;
     }
 
-    @media (min-width: 300px) and (max-width: 1024px) {
-       margin: 12px;
+    @media (min-width: 320px) and (max-width: 1024px) {
+       margin: 10px;
        width: 280px;
+       align-items: center;
+       justify-content: space-around;
+      
+        div {
+        }
+      
+        img {
+          margin: 0 auto;
+        }
+      
+        p {
+          text-align: center;
+          margin: 0 auto;
+        }
     }
 `
 
@@ -275,7 +243,7 @@ const Section = styled.section`
     @media (min-width: 300px) and (max-width: 1024px) {
         display: flex;
         flex-direction: column;
-        height: 900px;
+        height: 1050px;
 
         p {
             font-size: 16px;
@@ -525,10 +493,10 @@ const Form = styled.form`
         font-weight: bold;
     }
     
-    @media (min-width: 300px) and (max-width: 1024px) {
+    @media (min-width: 320px) and (max-width: 1024px) {
         width: 100%;
-        height: 350px;
-        padding: 0px 0px 0px 0px;
+        height: 250px;
+        padding-top: 0;
     }
 `
 

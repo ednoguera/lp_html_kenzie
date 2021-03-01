@@ -2,17 +2,17 @@ export const FetchData = (url, body) => {
     console.log(body)
 
     fetch(url, {
-        method: 'POST',
-        headers: {
+        "method": 'POST',
+        "headers": {
             "Content-type": "application/json",
-            "Authorization": {
-                "Api-Token": "d65594d3b238d28b01ccdf4aab08e2f8e4e51b42c17569938a7a821e3533156b885bec41"
+            'Api-Key': {
+                "Api-Token": "469e5872940f20c30730dcef3dcf85cbb8fc28c2b9e68813929c99e490ab86c236b88512"
             }
         },
-        body: body,
-        mode: 'no-cors'
+        "body": body,
+        "mode": 'no-cors'
     })
-        .then(response => console.log("Response: ", response))
+        .then(response => console.log("Response: ", response.json()))
         .then(data => console.log("Data: ", data))
 
 }
