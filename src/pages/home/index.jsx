@@ -22,11 +22,11 @@ const Home = () => {
 
     const textSubTitle = <p><strong style={{"color": blue}}>Aprenda HTML e CSS do zero</strong> e saia do curso com o um site totalmente desenvolvido por você.</p>
 
-    const subT1 = <p><strong style={{"color": orange}}>22 A 26</strong> DE MARÇO</p>
+    const subT1 = <p><strong style={{"color": orange}}>22 A 25</strong> DE MARÇO</p>
 
     const subT2 = <p><strong style={{"color": orange}}>100% GRÁTIS</strong> E AO VIVO</p>
 
-    const textPreFooterTitle = <p>Aulas ao vivo, de 22 a 26 de março,
+    const textPreFooterTitle = <p>Aulas ao vivo, de 22 a 25 de março,
         com <strong style={{"color": orange}}>dicas práticas e segredos sobre HTML e CSS</strong> para você
         dar um start em sua carreira dev e ser uma pessoa programadora
         de sucesso, <strong style={{"color": blue}}>disputada pelo mercado</strong>, na área de programação.</p>

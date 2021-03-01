@@ -9,16 +9,15 @@ const ActiveCampForm = (props) => {
 
     const {orange} = colors
 
+    const error = <p style={{"color": orange, "font-size": "14px"}}>Você precisa preencher todos os campos</p>
+
     const onFieldBlank = e => {
         e.preventDefault()
 
-        if (e.target.placeholder === "Nome") {
-            setDefaultMsg(true)
-        } else if (e.target.placeholder === "Email") {
-            setDefaultMsg(true)
-        } else if (e.target.placeholder === "Telefone") {
+        if (e.target.placeholder === "Email") {
             setDefaultMsg(true)
         }
+
     }
 
     return (
@@ -33,16 +32,14 @@ const ActiveCampForm = (props) => {
 
 
             <label>{props.label}</label>
-            <Input type="text" name="fullname" placeholder="Nome" required onInvalid={onFieldBlank} />
+            {/*<Input type="text" name="fullname" placeholder="Nome" required onInvalid={onFieldBlank} />*/}
             <Input type="text" name="email" placeholder="Email" required onInvalid={onFieldBlank}/>
-            <Input type="text" name="phone" placeholder="Telefone" required onInvalid={onFieldBlank}/>
-
+            {/*<Input type="text" name="phone" placeholder="Telefone" required onInvalid={onFieldBlank}/>*/}
             <Button id="_form_1_submit" class="_submit" type="submit">
                 Fazer meu cadastro
             </Button>
-
             {defaultMsg === true ? props.width >= 650 ? <h3 style={{"color": orange}}>Você precisa preencher todos os campos </h3> :
-                <p style={{"color": orange, "font-size": "14px"}}>Você precisa preencher todos os campos</p> : null}
+               error  : null}
         </Form>
     )
 }
