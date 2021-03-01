@@ -13,31 +13,29 @@ const ActiveCampForm = (props) => {
     const url = "https://kenzie39049.activehosted.com/proc.php"
 
     const {pathname} = useLocation()
-    let newUrl
-    let urlParams
-    let params
 
-    console.log(parameters.utm_source)
-    console.log(parameters.utm_medium)
-    console.log(parameters.utm_campaign)
+    if (pathname > 1) {
+        const paramsUrl = pathname.split("?")[1]
+        const params = paramsUrl.split("&")
 
-    const getParamns = pathname => {
-        if (pathname.length > 1) {
-            newUrl = url.split("?")
-            urlParams = newUrl[1]
-            params = urlParams.split("&")
-
-            setParameters(
-                parameters.utm_source = params[0].split("=")[1],
-                parameters.utm_medium = params[1].split("=")[1],
-                parameters.utm_campaign = params[2].split("=")[1]
-            )
-
-            // console.log(params[1].split("=")[1])
-        }
+        console.log(params[0].split("=")[1])
+        console.log(params[1].split("=")[1])
+        console.log(params[2].split("=")[1])
     }
 
-    getParamns(pathname)
+
+
+    // const getParams = pathname => {
+    //     setParameters(
+    //             parameters.utm_source = params[0].split("=")[1],
+    //             parameters.utm_medium = params[1].split("=")[1],
+    //             parameters.utm_campaign = params[2].split("=")[1]
+    //     )
+    //         // console.log(params[1].split("=")[1])
+    // }
+    //
+    // getParams(pathname)
+
 
 
     const {orange} = colors
