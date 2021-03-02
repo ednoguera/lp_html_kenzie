@@ -1,55 +1,61 @@
-import React, {useState, useEffect} from 'react'
-import {useParams, useLocation} from 'react-router-dom'
-import { Form, Input, Button } from '../../styles/styled-components'
-import {colors} from "../../styles/colors";
+import React, { useState, useEffect } from "react";
+import { useParams, useLocation } from "react-router-dom";
+import { Form, Input, Button } from "../../styles/styled-components";
+import { colors } from "../../styles/colors";
+import { Terms } from "./styles";
 
 const ActiveCampForm = (props) => {
-    const [defaultMsg, setDefaultMsg] = useState(null)
-    const [utmSource, setUtmSource] = useState("no-tracking")
-    const [utmMedium, setUtmMedium] = useState("no-tracking")
-    const [utmCampaign, setUtmCampaign] = useState("no-tracking")
+    const [defaultMsg, setDefaultMsg] = useState(null);
+    const [utmSource, setUtmSource] = useState("no-tracking");
+    const [utmMedium, setUtmMedium] = useState("no-tracking");
+    const [utmCampaign, setUtmCampaign] = useState("no-tracking");
 
-    const url = "https://kenzie39049.activehosted.com/proc.php"
+    const url = "https://kenzie39049.activehosted.com/proc.php";
 
-    const pathname = window.location.href
+    const pathname = window.location.href;
 
-    let paramsUrl = false
-    let params = false
+    let paramsUrl = false;
+    let params = false;
 
     const getUrlParams = () => {
         if (pathname.length > 39) {
-                paramsUrl = pathname.split("?")[1]
-                params = paramsUrl.split("&")
+            paramsUrl = pathname.split("?")[1];
+            params = paramsUrl.split("&");
 
-                setUtmSource(params[0].split("=")[1])
-                setUtmMedium(params[1].split("=")[1])
-                setUtmCampaign(params[2].split("=")[1])
-            }
-    }
+            setUtmSource(params[0].split("=")[1]);
+            setUtmMedium(params[1].split("=")[1]);
+            setUtmCampaign(params[2].split("=")[1]);
+        }
+    };
 
+    const { orange } = colors;
 
+    const error = (
+        <p style={{ color: orange, "font-size": "14px" }}>
+            Você precisa preencher todos os campos
+        </p>
+    );
 
-    const {orange} = colors
-
-    const error = <p style={{"color": orange, "font-size": "14px"}}>Você precisa preencher todos os campos</p>
-
-    const onFieldBlank = e => {
-        e.preventDefault()
-
+    const onFieldBlank = (e) => {
+        e.preventDefault();
 
         if (e.target.placeholder === "Email") {
-            setDefaultMsg(true)
+            setDefaultMsg(true);
         }
-
-    }
-
+    };
 
     useEffect(() => {
-        getUrlParams()
-    })
+        getUrlParams();
+    });
 
     return (
-        <Form method="POST" action={url}  id="_form_1_" className="_form _form_1 _inline-form  " validate>
+        <Form
+            method="POST"
+            action={url}
+            id="_form_1_"
+            className="_form _form_1 _inline-form  "
+            validate
+        >
             <input type="hidden" name="u" value="1" />
             <input type="hidden" name="f" value="1" />
             <input type="hidden" name="s" />
@@ -58,30 +64,55 @@ const ActiveCampForm = (props) => {
             <input type="hidden" name="act" value="sub" />
             <input type="hidden" name="v" value="2" />
 
-
-
             <label>{props.label}</label>
             {/*<Input type="text" name="fullname" placeholder="Nome" required onInvalid={onFieldBlank} />*/}
-            <Input type="text" name="email" placeholder="Email" required onInvalid={onFieldBlank}/>
+            <Terms>
+                Deixe o seu e-mail e entre para nosso grupo VIP de WhatsApp.
+            </Terms>
+            <Input
+                type="text"
+                name="email"
+                placeholder="Email"
+                required
+                onInvalid={onFieldBlank}
+            />
             {/*<Input type="text" name="phone" placeholder="Telefone" required onInvalid={onFieldBlank}/>*/}
-            <div className="_form_element _field1 _full_width " >
+            <div className="_form_element _field1 _full_width ">
                 <input type="hidden" name="field[1]" value={utmSource} />
             </div>
-            <div className="_form_element _field3 _full_width " >
+            <div className="_form_element _field3 _full_width ">
                 <input type="hidden" name="field[3]" value={utmMedium} />
             </div>
-            <div className="_form_element _field4 _full_width " >
+            <div className="_form_element _field4 _full_width ">
                 <input type="hidden" name="field[4]" value={utmCampaign} />
             </div>
+
             <Button id="_form_1_submit" class="_submit" type="submit">
-                Fazer meu cadastro
+                Participe agora!
             </Button>
-            {defaultMsg === true ? props.width >= 650 ? <h3 style={{"color": orange}}>Você precisa preencher todos os campos </h3> :
-               error  : null}
 
+            <Terms>
+                Ao se cadastrar, você concorda com os{" "}
+                <a
+                    href="https://formulario.kenzie.com.br/termos-condicoes"
+                    target="_blank"
+                >
+                    termos de uso
+                </a>{" "}
+                e privacidade da Kenzie Academy Brasil
+            </Terms>
 
+            {defaultMsg === true ? (
+                props.width >= 650 ? (
+                    <h3 style={{ color: orange }}>
+                        Você precisa preencher o campo de email{" "}
+                    </h3>
+                ) : (
+                    error
+                )
+            ) : null}
         </Form>
-    )
-}
+    );
+};
 
-export default ActiveCampForm
+export default ActiveCampForm;
