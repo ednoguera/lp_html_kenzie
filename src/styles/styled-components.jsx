@@ -488,10 +488,15 @@ const Form = styled.form`
     padding-top: 0;
 
     label {
+      margin-top: -1em;
       width: 90%;
     }
 
     button {
+      padding: 0.4em 0;
+    }
+
+    input {
       padding: 0.4em 0;
     }
   }
