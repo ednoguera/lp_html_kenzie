@@ -30,7 +30,7 @@ const Header = (props) => {
             <TitleContainer>
               <p>
                 DÊ UM START EM SUA CARREIRA DEV
-                <strong style={{ color: blue }}>.</strong>
+                <strong style={{ color: orange }}>.</strong>
               </p>
             </TitleContainer>
 

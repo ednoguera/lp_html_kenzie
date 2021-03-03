@@ -15,7 +15,7 @@ const HeaderApp = styled.header`
   align-items: center;
 
   @media (min-width: 300px) and (max-width: 1024px) {
-    padding-top: 0.5em;
+    padding-top: 0;
     justify-content: flex-start;
     height: 800px;
   }
@@ -32,6 +32,7 @@ const BannerContainer = styled.div`
   @media (min-width: 320px) and (max-width: 1024px) {
     position: initial;
     width: 100%;
+    padding-top: 2em;
   }
 `;
 
@@ -83,10 +84,11 @@ const TitleContainer = styled.div`
     margin: 0 auto;
 
     p {
-      font-size: 20px;
-      width: 280px;
+      font-size: 1.8em;
+      width: 100%;
       text-align: center;
-      margin: 0 auto;
+      padding: 0 0.8em;
+      box-sizing: border-box;
     }
   }
 `;
@@ -132,7 +134,8 @@ const SubTitleContainer = styled.div`
     align-items: center;
 
     p {
-      font-size: 18px;
+      font-size: 1.2em;
+      margin-top: 2em;
       width: 280px;
       text-align: center;
     }
@@ -166,7 +169,7 @@ const SubTitle2Container = styled.div`
     margin-bottom: 1rem;
     padding-bottom: 100px;
     position: relative;
-    top: 9em;
+    top: 7em;
 
     p {
       font-size: 14px;
@@ -488,8 +491,12 @@ const Form = styled.form`
     padding-top: 0;
 
     label {
-      margin-top: 1em;
-      width: 90%;
+      font-weight: initial;
+      font-size: 0.9em;
+      width: 85%;
+      span {
+        font-weight: bold;
+      }
     }
 
     button {
