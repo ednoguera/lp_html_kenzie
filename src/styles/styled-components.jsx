@@ -166,7 +166,7 @@ const SubTitle2Container = styled.div`
     margin-bottom: 1rem;
     padding-bottom: 100px;
     position: relative;
-    top: 2em;
+    top: 3em;
 
     p {
       font-size: 14px;
@@ -486,6 +486,14 @@ const Form = styled.form`
     width: 100%;
     height: 250px;
     padding-top: 0;
+
+    label {
+      width: 90%;
+    }
+
+    button {
+      padding: 0.4em 0;
+    }
   }
 `;
 

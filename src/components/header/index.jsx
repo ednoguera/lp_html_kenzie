@@ -44,16 +44,7 @@ const Header = (props) => {
             </SubTitleContainer>
 
             <FormContainer>
-              {width < 1024 ? (
-                <ActiveCampForm
-                  label={
-                    <p>
-                      Inscrição gratuita
-                      <strong style={{ color: orange }}>!</strong>
-                    </p>
-                  }
-                />
-              ) : null}
+              {width < 1024 ? <ActiveCampForm label={props.label} /> : null}
               <SubTitle2Container>
                 <div>
                   {width >= 768 ? <img src={props.getImage1} /> : null}
