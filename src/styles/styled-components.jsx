@@ -15,9 +15,9 @@ const HeaderApp = styled.header`
   align-items: center;
 
   @media (min-width: 300px) and (max-width: 1024px) {
-    padding-top: 20px;
+    padding-top: 0.5em;
     justify-content: flex-start;
-    height: 700px;
+    height: 800px;
   }
 `;
 
@@ -166,7 +166,7 @@ const SubTitle2Container = styled.div`
     margin-bottom: 1rem;
     padding-bottom: 100px;
     position: relative;
-    top: 3em;
+    top: 9em;
 
     p {
       font-size: 14px;
@@ -488,16 +488,18 @@ const Form = styled.form`
     padding-top: 0;
 
     label {
-      margin-top: -1em;
+      margin-top: 1em;
       width: 90%;
     }
 
     button {
-      padding: 0.4em 0;
+      padding: 1em 0;
+      width: 85%;
     }
 
     input {
-      padding: 0.4em 0;
+      padding: 1em 0;
+      width: 85%;
     }
   }
 `;
@@ -505,7 +507,7 @@ const Form = styled.form`
 const Input = styled.input`
   height: 64px;
   margin: 0 0 1rem 0;
-  border-radius: 10px;
+  border-radius: 0.5em;
   outline: none;
   font-size: 20px;
   text-align: center;
@@ -530,7 +532,7 @@ const Button = styled.button`
   background-color: #25d366;
   outline: none;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.5em;
 
   cursor: pointer;
   font-size: 20px;
@@ -542,6 +544,7 @@ const Button = styled.button`
     height: 70px;
     width: 270px;
     margin: 10px;
+    border-radius: 0.5em;
   }
 `;
 
