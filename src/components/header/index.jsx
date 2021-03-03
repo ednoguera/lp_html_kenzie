@@ -33,6 +33,7 @@ const Header = (props) => {
                                 <strong style={{ color: blue }}>.</strong>
                             </p>
                         </TitleContainer>
+
                         <SubTitleContainer>
                             <p>
                                 <strong style={{ color: blue }}>
@@ -42,6 +43,7 @@ const Header = (props) => {
                                 desenvolvido por você.
                             </p>
                         </SubTitleContainer>
+
                         <FormContainer>
                             {width < 1024 ? (
                                 <ActiveCampForm

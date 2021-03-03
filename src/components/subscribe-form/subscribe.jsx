@@ -12,13 +12,10 @@ const Subscribe = () => {
     const [email, setEmail] = useState();
     const history = useHistory();
 
-    const url = "https://kenzie39049.api-us1.com/api/3/contacts";
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
         FetchData(
-            url,
             JSON.stringify({
                 contact: {
                     email: email

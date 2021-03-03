@@ -17,7 +17,7 @@ const HeaderApp = styled.header`
     @media (min-width: 300px) and (max-width: 1024px) {
         padding-top: 20px;
         justify-content: flex-start;
-        height: 600px;
+        height: 700px;
     }
 `;
 
@@ -161,6 +161,8 @@ const SubTitle2Container = styled.div`
         width: 300px;
         margin-bottom: 1rem;
         padding-bottom: 100px;
+        position: relative;
+        top: 5em;
 
         p {
             font-size: 14px;
