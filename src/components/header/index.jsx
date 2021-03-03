@@ -14,9 +14,11 @@ import Subscribe from "../../components/subscribe-form/subscribe";
 import logoBlue from "../assets/img/logo/logo-blue.svg";
 import ActiveCampForm from "../../components/active_campaign_form/";
 import useWindowSize from "../../helper/use-window-hook";
+import { colors } from "../../styles/colors";
 
 const Header = (props) => {
     const { width } = useWindowSize();
+    const { blue, orange } = colors;
 
     return (
         <HeaderApp>
@@ -26,14 +28,32 @@ const Header = (props) => {
                 <HeaderContainer>
                     <div>
                         <TitleContainer>
-                            <p>{props.title}</p>
+                            <p>
+                                DÊ UM START EM SUA CARREIRA DEV
+                                <strong style={{ color: blue }}>.</strong>
+                            </p>
                         </TitleContainer>
                         <SubTitleContainer>
-                            <p>{props.subTitle}</p>
+                            <p>
+                                <strong style={{ color: blue }}>
+                                    Aprenda HTML e CSS do zero
+                                </strong>{" "}
+                                e saia do curso com o um site totalmente
+                                desenvolvido por você.
+                            </p>
                         </SubTitleContainer>
                         <FormContainer>
                             {width < 1024 ? (
-                                <ActiveCampForm label={props.label} />
+                                <ActiveCampForm
+                                    label={
+                                        <p>
+                                            Inscrição gratuita
+                                            <strong style={{ color: orange }}>
+                                                !
+                                            </strong>
+                                        </p>
+                                    }
+                                />
                             ) : null}
                             <SubTitle2Container>
                                 <div>

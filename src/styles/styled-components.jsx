@@ -6,7 +6,7 @@ const PageHome = styled.div`
 `;
 
 const HeaderApp = styled.header`
-    height: 594px;
+    min-height: 594px;
     background-color: #121212;
 
     display: flex;

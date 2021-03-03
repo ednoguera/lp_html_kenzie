@@ -1,5 +1,6 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation, useHistory } from "react-router-dom";
 import HeaderTyp from "../../components/header_typ/";
 import Footer from "../../components/footer/";
 import logo from "../../components/assets/img/logo/logo.svg";
@@ -10,6 +11,9 @@ import { colors } from "../../styles/colors";
 
 const ThankYouPage = () => {
     const location = useLocation();
+    const history = useHistory();
+
+    useEffect(() => history.push("https://curso-html-css.joinzap.app/"), []);
 
     const urlYoutube =
         "https://www.youtube.com/KenzieAcademyBrasil?sub_confirmation=1";
