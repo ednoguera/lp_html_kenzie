@@ -1,5 +1,9 @@
-import React from 'react'
-import { TitleImgContainer, Divisor, TextContainer } from '../../styles/styled-components'
+import React from "react";
+import {
+    TitleImgContainer,
+    Divisor,
+    TextContainer
+} from "../../styles/styled-components";
 
 const TitleImg = (props) => {
     return (
@@ -8,11 +12,9 @@ const TitleImg = (props) => {
             <figure>
                 <img src={props.img} />
             </figure>
-            <TextContainer>
-                <p>{props.title}</p>
-            </TextContainer>
+            <TextContainer>{props.title}</TextContainer>
         </TitleImgContainer>
-    )
-}
+    );
+};
 
-export default TitleImg
+export default TitleImg;

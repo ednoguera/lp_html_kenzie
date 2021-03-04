@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
 import { Form, Input, Button } from "../../styles/styled-components";
 import { colors } from "../../styles/colors";
 import { Terms } from "./styles";
@@ -84,7 +83,7 @@ const ActiveCampForm = (props) => {
         <input type="hidden" name="field[4]" value={utmCampaign} />
       </div>
 
-      <Button id="_form_1_submit" class="_submit" type="submit">
+      <Button id="_form_1_submit" className="_submit" type="submit">
         ENTRAR NO GRUPO AGORA
       </Button>
 
@@ -93,6 +92,7 @@ const ActiveCampForm = (props) => {
         <a
           href="https://formulario.kenzie.com.br/termos-condicoes"
           target="_blank"
+          rel="noreferrer"
         >
           termos de uso
         </a>{" "}
