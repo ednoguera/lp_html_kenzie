@@ -17,14 +17,14 @@ const ActiveCampForm = (props) => {
   let params = false;
 
   const getUrlParams = () => {
-    //    if (pathname.length > 39) {
-    //      paramsUrl = pathname.split("?")[1];
-    //      params = paramsUrl.split("&");
-    //
-    //      setUtmSource(params[0].split("=")[1]);
-    //      setUtmMedium(params[1].split("=")[1]);
-    //      setUtmCampaign(params[2].split("=")[1]);
-    //    }
+    if (pathname.length > 39) {
+      paramsUrl = pathname.split("?")[1];
+      params = paramsUrl.split("&");
+
+      setUtmSource(params[0].split("=")[1]);
+      setUtmMedium(params[1].split("=")[1]);
+      setUtmCampaign(params[2].split("=")[1]);
+    }
   };
 
   const { orange } = colors;
