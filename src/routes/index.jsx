@@ -1,6 +1,7 @@
 import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "../pages/home/index";
 import ThankYouPage from "../pages/typ";
+import { useEffect } from "react";
 
 const ActiveCampaign = () => {
   useEffect(() => {
