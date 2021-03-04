@@ -3,11 +3,15 @@ import Home from "../pages/home/index";
 import ThankYouPage from "../pages/typ";
 
 const ActiveCampaign = () => {
-  return window.dataLayer.push({ event: "active-campaign-form-sent" });
-  setTimeout(
-    () => (window.location = "https://curso-html-css.joinzap.app/"),
-    1000
-  );
+  useEffect(() => {
+    window.dataLayer.push({ event: "active-campaign-form-sent" });
+    setTimeout(
+      () => (window.location = "https://curso-html-css.joinzap.app/"),
+      1000
+    );
+  }, []);
+
+  return <p></p>;
 };
 
 const Router = () => {
