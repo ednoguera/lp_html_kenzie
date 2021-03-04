@@ -15,7 +15,7 @@ const Router = () => {
           render={() => {
             setTimeout(
               () => (window.location = "https://curso-html-css.joinzap.app/"),
-              1000
+              2000
             );
           }}
         />

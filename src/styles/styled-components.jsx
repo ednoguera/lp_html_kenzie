@@ -90,27 +90,19 @@ const TitleContainer = styled.div`
     }
   }
 `;
-const FooterTitleContainer = styled.div`
-  height: 242px;
-  width: 560px;
 
-  p {
-    font-size: 30px;
-    color: #fff;
-    text-align: left;
-    font-weight: bold;
-  }
+const FooterTitleContainer = styled.p`
+  font-size: 30px;
+  color: #fff;
+  text-align: left;
+  font-weight: bold;
+  margin-right: 2em;
 
   @media (min-width: 300px) and (max-width: 1024px) {
-    width: 100%;
+    width: 85%;
     height: 250px;
     margin: 0 auto;
-
-    p {
-      font-size: 20px;
-      width: 280px;
-      margin: 0 auto;
-    }
+    font-size: 20px;
   }
 `;
 
@@ -209,6 +201,7 @@ const IconContainer = styled.div`
   border-radius: 10px;
   opacity: 1;
   margin: 72px;
+  background-color: #3c3c3c;
 
   display: flex;
   flex-direction: column;
@@ -216,25 +209,27 @@ const IconContainer = styled.div`
   justify-content: center;
 
   p {
-    font-size: 18px;
+    font-size: 1.05em;
     color: #fff;
     width: 283px;
   }
 
-  @media (min-width: 320px) and (max-width: 1024px) {
+  @media (max-width: 1024px) {
     margin: 10px;
     width: 280px;
     align-items: center;
-    justify-content: space-around;
-
-    div {
-    }
+    justify-content: center;
+    max-height: 10em;
+    padding: 1em 0;
+    justify-content: center;
 
     img {
-      margin: 0 auto;
+      margin: 0.5em auto;
+      height: 4em;
     }
 
     p {
+      font-size: 0.9em;
       text-align: center;
       margin: 0 auto;
     }
@@ -245,16 +240,14 @@ const Section = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 412px;
   background-color: #171717;
 
   @media (min-width: 300px) and (max-width: 1024px) {
     display: flex;
     flex-direction: column;
-    height: 1050px;
+    padding: 2em 0;
 
     p {
-      font-size: 16px;
       width: 90%;
       line-height: 1.4;
     }
@@ -265,23 +258,23 @@ const Section = styled.section`
 
 const PreFooterSection = styled.section`
   background-color: #121212;
-  height: 505px;
   margin: 0;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2em 7em;
 
-  @media (min-width: 300px) and (max-width: 1024px) {
-    flex-direction: column;
-    height: 950px;
+  @media (max-width: 1024px) {
+    padding: 2em 1em;
   }
 `;
 
 const PreFooterGroup = styled.div`
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
 
   @media (min-width: 300px) and (max-width: 1024px) {
@@ -295,7 +288,8 @@ const PreFooterGroup = styled.div`
 
 const TitleImgContainer = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
 
   p {
     font-size: 18px;
@@ -307,7 +301,9 @@ const TitleImgContainer = styled.div`
   @media (min-width: 300px) and (max-width: 1024px) {
     flex-direction: column;
     justify-content: center;
-    margin: 0;
+    margin: 0 auto;
+    width: 85%;
+    align-items: flex-start;
 
     p {
       font-size: 16px;
@@ -317,6 +313,7 @@ const TitleImgContainer = styled.div`
     }
 
     figure {
+      margin: 0;
       margin-bottom: 1rem;
       padding: 0 0 0 0;
     }
@@ -326,7 +323,6 @@ const TitleImgContainer = styled.div`
 const Divisor = styled.div`
   width: 2px;
   height: 250px;
-  margin: 5rem 0 0 0rem;
   background-color: #fff;
 
   @media (min-width: 1900px) and (max-width: 4000px) {
@@ -344,7 +340,7 @@ const HashSection = styled.div`
 
   @media (min-width: 300px) and (max-width: 1024px) {
     flex-direction: column;
-    margin: 0 auto;
+    margin: 1em auto;
   }
 `;
 
@@ -362,7 +358,7 @@ const HashStyle = styled.div`
     margin: 0 auto;
 
     h2 {
-      font-size: 14px;
+      font-size: 1.5em;
     }
   }
 `;
@@ -384,8 +380,8 @@ const TextContainer = styled.div`
 
 const FooterSection = styled.footer`
   background-color: #171717;
-  height: 327px;
   display: flex;
+  padding: 3em;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -396,6 +392,14 @@ const FooterSection = styled.footer`
 
   p {
     color: #fff;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 2em 1em;
+
+    p {
+      font-size: 0.8em;
+    }
   }
 `;
 

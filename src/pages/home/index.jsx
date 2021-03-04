@@ -23,7 +23,7 @@ const Home = () => {
   const { width } = useWindowSize();
 
   const textPreFooterTitle = (
-    <p>
+    <>
       Aulas ao vivo, de 22 a 25 de março, com{" "}
       <strong style={{ color: orange }}>
         dicas práticas e segredos sobre HTML e CSS
@@ -32,7 +32,7 @@ const Home = () => {
       de sucesso,{" "}
       <strong style={{ color: blue }}>disputada pelo mercado</strong>, na área
       de programação.
-    </p>
+    </>
   );
 
   const Label = (
