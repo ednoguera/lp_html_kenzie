@@ -49,14 +49,21 @@ const Header = (props) => {
                 <div>
                   {width >= 768 ? <img src={props.getImage1} /> : null}
                   <p>
-                    <strong style={{ color: orange }}>22 A 25</strong> DE MARÇO
+                    <strong style={{ color: orange }}>22 A 25</strong>
+                    {width < 1024 && <br />} DE MARÇO
+                    {width < 1024 && (
+                      <strong style={{ color: orange }}>
+                        <br /> 19h
+                      </strong>
+                    )}
                   </p>
                 </div>
+                {width < 1024 && <div className="divider" />}
                 <div>
                   {width >= 768 ? <img src={props.getImage2} /> : null}
                   <p>
-                    <strong style={{ color: orange }}>100% grátis</strong> e ao
-                    vivo
+                    <strong style={{ color: orange }}>100% GRÁTIS</strong>
+                    {width < 1024 && <br />} E AO VIVO
                   </p>
                 </div>
               </SubTitle2Container>

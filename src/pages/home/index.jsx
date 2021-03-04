@@ -1,4 +1,5 @@
 import React from "react";
+import useWindowSize from "../../helper/use-window-hook";
 
 import Header from "../../components/header/";
 import miniPc from "../../components/assets/img/icons/mini-pc-dark.svg";
@@ -19,6 +20,7 @@ import { colors } from "../../styles/colors";
 
 const Home = () => {
   const { blue, orange } = colors;
+  const { width } = useWindowSize();
 
   const textPreFooterTitle = (
     <p>
@@ -35,16 +37,17 @@ const Home = () => {
 
   const Label = (
     <p>
-      Preencha abaixo gratuitamente e entre agora no nosso{" "}
-      <span style={{ color: "#25D366" }}>GRUPO VIP de WhatsApp </span>
-      para receber o seu acesso às aulas do Start Carreira DEV
+      Entre agora no nosso
+      <span style={{ color: "#25D366" }}> GRUPO VIP de WhatsApp </span>
+      para receber o seu acesso às aulas
       <strong style={{ color: orange }}>!</strong>
     </p>
   );
 
   return (
     <PageHome>
-      <HeaderAppbar />
+      {width > 1024 && <HeaderAppbar />}
+
       <Header getImage1={miniPc} getImage2={agenda} label={Label} />
       <IconSection />
       <PreFooter title={textPreFooterTitle} />

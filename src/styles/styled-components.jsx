@@ -17,7 +17,6 @@ const HeaderApp = styled.header`
   @media (min-width: 300px) and (max-width: 1024px) {
     padding-top: 0;
     justify-content: flex-start;
-    height: 800px;
   }
 `;
 
@@ -47,8 +46,8 @@ const HeaderContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
 
-  height: 500px;
   width: 1200px;
+  padding-bottom: 5%;
 
   @media (min-width: 320px) and (max-width: 1023px) {
     justify-content: center;
@@ -64,7 +63,6 @@ const HeaderContainer = styled.div`
 const FormContainer = styled.div`
   @media (min-width: 320px) and (max-width: 1024px) {
     padding-bottom: 10px;
-    height: 100px;
   }
 `;
 
@@ -80,7 +78,6 @@ const TitleContainer = styled.div`
 
   @media (min-width: 300px) and (max-width: 1024px) {
     width: 100%;
-    height: 50px;
     margin: 0 auto;
 
     p {
@@ -89,6 +86,7 @@ const TitleContainer = styled.div`
       text-align: center;
       padding: 0 0.8em;
       box-sizing: border-box;
+      margin: 0;
     }
   }
 `;
@@ -127,16 +125,15 @@ const SubTitleContainer = styled.div`
 
   @media (min-width: 320px) and (max-width: 1024px) {
     width: 100%;
-    height: 150px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     p {
-      font-size: 1.2em;
-      margin-top: 2em;
-      width: 280px;
+      font-size: 1.1em;
+      margin-top: 1em;
+      max-width: 85%;
       text-align: center;
     }
   }
@@ -165,21 +162,37 @@ const SubTitle2Container = styled.div`
   }
 
   @media (min-width: 320px) and (max-width: 1024px) {
-    width: 300px;
-    margin-bottom: 1rem;
-    padding-bottom: 100px;
-    position: relative;
-    top: 7em;
+    padding: 1em 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    div {
+      margin: 0;
+    }
 
     p {
-      font-size: 14px;
-      width: 250px;
+      font-size: 1.3em;
       margin: 0 auto;
       text-align: center;
     }
 
     img {
       display: none;
+    }
+
+    div:first-of-type p {
+      text-align: right;
+    }
+
+    div:nth-child(2) {
+      border: 1px solid #747474;
+      margin: 0 1em;
+      height: 3em;
+    }
+
+    div:last-of-type p {
+      text-align: left;
     }
   }
 `;
@@ -487,25 +500,31 @@ const Form = styled.form`
 
   @media (min-width: 320px) and (max-width: 1024px) {
     width: 100%;
-    height: 250px;
     padding-top: 0;
 
     label {
       font-weight: initial;
-      font-size: 0.9em;
+      font-size: 1em;
       width: 85%;
+      line-height: 1.4em;
+
+      p {
+        margin: 0;
+        margin-bottom: 0.4em;
+      }
+
       span {
         font-weight: bold;
       }
     }
 
     button {
-      padding: 1em 0;
+      height: 4em;
       width: 85%;
     }
 
     input {
-      padding: 1em 0;
+      height: 4em;
       width: 85%;
     }
   }
@@ -518,11 +537,11 @@ const Input = styled.input`
   outline: none;
   font-size: 20px;
   text-align: center;
-  color: #fff;
   font-weight: bold;
-  background-color: #3c3c3c;
-  border: 2px solid #969696;
   width: 400px;
+  background-color: rgb(214, 214, 214);
+  border: none;
+  color: black;
 
   @media (min-width: 300px) and (max-width: 1024px) {
     height: 52px;
