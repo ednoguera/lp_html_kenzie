@@ -51,11 +51,8 @@ const Header = (props) => {
                   <p>
                     <strong style={{ color: orange }}>22 A 25</strong>
                     {width < 1024 && <br />} DE MARÇO
-                    {width < 1024 && (
-                      <strong style={{ color: orange }}>
-                        <br /> 19h
-                      </strong>
-                    )}
+                    {width < 1024 && <br />} ÀS
+                    <strong style={{ color: orange }}> 19h</strong>
                   </p>
                 </div>
                 {width < 1024 && <div className="divider" />}
