@@ -1,13 +1,13 @@
-import React from 'react'
-import { FooterSection } from '../../styles/styled-components'
+import React from "react";
+import { FooterSection } from "../../styles/styled-components";
 
-const Footer = props => {
-    return (
-        <FooterSection>
-            <figure>
-                <img src={props.logo} />
-            </figure>
-            {/* <div>
+const Footer = (props) => {
+  return (
+    <FooterSection>
+      <figure>
+        <img src={props.logo} />
+      </figure>
+      {/* <div>
                 <a href="https://www.instagram.com/kenzieacademybr/" target="_blank">
                     <img src={props.instagram} />
                 </a>
@@ -18,11 +18,11 @@ const Footer = props => {
                     <img src={props.linkedin} />
                 </a>
             </div> */}
-            <div>
-                <p>{props.copyrights}</p>
-            </div>
-        </FooterSection>
-    )
-}
+      <div>
+        <p>{props.copyrights}</p>
+      </div>
+    </FooterSection>
+  );
+};
 
-export default Footer
+export default Footer;
