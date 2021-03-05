@@ -525,11 +525,13 @@ const Form = styled.form`
     button {
       height: 4em;
       width: 85%;
+      box-sizing: border-box;
     }
 
     input {
       height: 4em;
       width: 85%;
+      box-sizing: border-box;
     }
   }
 `;
