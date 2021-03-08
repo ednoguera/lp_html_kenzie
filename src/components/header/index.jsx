@@ -23,10 +23,9 @@ const Header = (props) => {
   return (
     <HeaderApp>
       <BannerContainer>
-        <LogoContainer src={logoBlue} />
-
         <HeaderContainer>
           <div>
+            <LogoContainer src={logoBlue} />
             <TitleContainer>
               <p>
                 DÊ UM START EM SUA CARREIRA DEV

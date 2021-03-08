@@ -37,38 +37,51 @@ const BannerContainer = styled.div`
 
 const LogoContainer = styled.img`
   @media (min-width: 320px) and (max-width: 1024px) {
-    padding: 0px 0 20px 45%;
+    margin-bottom: 1em;
   }
 `;
 
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 
-  width: 1200px;
   padding-bottom: 5%;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 40vw;
+  }
 
   @media (min-width: 320px) and (max-width: 1023px) {
     justify-content: center;
-    width: 100%;
     margin: 0 auto;
+    width: 100vw;
 
     div {
-      margin: 0rem auto;
+      max-width: 95%;
+      align-items: center;
     }
   }
 `;
 
 const FormContainer = styled.div`
-  @media (min-width: 320px) and (max-width: 1024px) {
+  margin: 0;
+  width: 100%;
+
+  @media (max-width: 1024px) {
     padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 `;
 
 const TitleContainer = styled.div`
-  width: 560px;
-
   p {
     font-size: 48px;
     color: #fff;
@@ -100,15 +113,13 @@ const FooterTitleContainer = styled.p`
 
   @media (min-width: 300px) and (max-width: 1024px) {
     width: 85%;
-    height: 250px;
     margin: 0 auto;
+    padding-bottom: 1em;
     font-size: 20px;
   }
 `;
 
 const SubTitleContainer = styled.div`
-  width: 350px;
-
   p {
     text-align: left;
     color: #fff;
@@ -116,16 +127,15 @@ const SubTitleContainer = styled.div`
   }
 
   @media (min-width: 320px) and (max-width: 1024px) {
-    width: 100%;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    max-width: 80vw;
 
     p {
       font-size: 1.1em;
       margin-top: 1em;
-      max-width: 85%;
       text-align: center;
     }
   }
@@ -134,7 +144,6 @@ const SubTitleContainer = styled.div`
 const SubTitle2Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 350px;
 
   img {
     margin-right: 2rem;
@@ -155,9 +164,10 @@ const SubTitle2Container = styled.div`
 
   @media (min-width: 320px) and (max-width: 1024px) {
     padding: 1em 0;
-    flex-direction: row;
+    display: flex;
+    flex-direction: row !important;
     justify-content: center;
-    align-items: center;
+    align-items: center !important;
 
     div {
       margin: 0;
@@ -217,7 +227,6 @@ const IconContainer = styled.div`
 
   @media (max-width: 1024px) {
     margin: 10px;
-    width: 280px;
     align-items: center;
     justify-content: center;
     max-height: 10em;
@@ -239,13 +248,13 @@ const IconContainer = styled.div`
 
 const Section = styled.section`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   background-color: #171717;
 
   @media (min-width: 300px) and (max-width: 1024px) {
     display: flex;
-    flex-direction: column;
     padding: 2em 0;
 
     p {
@@ -273,10 +282,11 @@ const PreFooterSection = styled.section`
 `;
 
 const PreFooterGroup = styled.div`
-  width: 100%;
+  min-width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
 
   @media (min-width: 300px) and (max-width: 1024px) {
     flex-direction: column;
@@ -295,7 +305,6 @@ const TitleImgContainer = styled.div`
   p {
     font-size: 18px;
     color: #fff;
-    width: 500px;
     line-height: 1.6;
   }
 
@@ -309,7 +318,6 @@ const TitleImgContainer = styled.div`
     p {
       font-size: 16px;
       color: #fff;
-      width: 300px;
       margin: 0 auto;
     }
 
@@ -340,7 +348,10 @@ const HashSection = styled.div`
   margin: 1rem;
 
   @media (min-width: 300px) and (max-width: 1024px) {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     margin: 1em auto;
   }
 `;
@@ -356,7 +367,7 @@ const HashStyle = styled.div`
 
   @media (min-width: 300px) and (max-width: 1024px) {
     display: flex;
-    margin: 0 auto;
+    margin: 0 1em;
 
     h2 {
       font-size: 1.5em;
@@ -366,14 +377,7 @@ const HashStyle = styled.div`
 
 const TextContainer = styled.div`
   p {
-    width: 380px;
     text-align: left;
-  }
-
-  @media (min-width: 300px) and (max-width: 1024px) {
-    p {
-      width: 280px;
-    }
   }
 `;
 
