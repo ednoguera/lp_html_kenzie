@@ -210,9 +210,9 @@ const IconContainer = styled.div`
   border: 2px solid #969696;
   border-radius: 10px;
   opacity: 1;
-  margin: 72px;
   background-color: #3c3c3c;
   padding: 0 1em;
+  margin: 1em;
 
   display: flex;
   flex-direction: column;
@@ -248,13 +248,14 @@ const IconContainer = styled.div`
 
 const Section = styled.section`
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background-color: #171717;
+  padding: 4em 2em;
 
   @media (min-width: 300px) and (max-width: 1024px) {
     display: flex;
+    flex-wrap: wrap;
     padding: 2em 0;
 
     p {
