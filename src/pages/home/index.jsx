@@ -56,7 +56,7 @@ const Home = () => {
         instagram={instagram}
         youtube={youtube}
         linkedin={linkedin}
-        copyrights="Copyrights 2020 Kenzie All right Reserved"
+        copyrights="&copy; 2020 Kenzie Academy. All rights reserved."
       />
     </PageHome>
   );
