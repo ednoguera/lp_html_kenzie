@@ -287,7 +287,6 @@ const PreFooterGroup = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  flex-wrap: wrap;
 
   @media (min-width: 300px) and (max-width: 1024px) {
     flex-direction: column;
