@@ -202,6 +202,7 @@ const IconContainer = styled.div`
   opacity: 1;
   margin: 72px;
   background-color: #3c3c3c;
+  padding: 0 1em;
 
   display: flex;
   flex-direction: column;
