@@ -71,6 +71,7 @@ const ActiveCampForm = (props) => {
         placeholder="Email"
         required
         onInvalid={onFieldBlank}
+        id="email-input"
       />
       {/*<Input type="text" name="phone" placeholder="Telefone" required onInvalid={onFieldBlank}/>*/}
       <div className="_form_element _field1 _full_width ">

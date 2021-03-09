@@ -15,6 +15,7 @@ import PreFooter from "../../components/pre-footer/";
 import Footer from "../../components/footer/";
 import { PageHome } from "../../styles/styled-components";
 import HeaderAppbar from "../../components/header-appbar";
+import ContentSection from "../../components/content";
 
 import { colors } from "../../styles/colors";
 
@@ -50,6 +51,7 @@ const Home = () => {
 
       <Header getImage1={miniPc} getImage2={agenda} label={Label} />
       <IconSection />
+      <ContentSection />
       <PreFooter title={textPreFooterTitle} />
       <Footer
         logo={logo}

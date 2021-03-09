@@ -268,7 +268,7 @@ const Section = styled.section`
 //PRE FOOTER SECTION
 
 const PreFooterSection = styled.section`
-  background-color: #121212;
+  background-color: rgb(23, 23, 23);
   margin: 0;
 
   display: flex;
@@ -384,7 +384,7 @@ const TextContainer = styled.div`
 //FOOTER SECTION
 
 const FooterSection = styled.footer`
-  background-color: #171717;
+  background-color: #121212;
   display: flex;
   padding: 3em;
   justify-content: center;
@@ -566,7 +566,7 @@ const Input = styled.input`
 const Button = styled.button`
   height: 64px;
   width: 410px;
-  background-color: #25d366;
+  background-color: ${(props) => (props.color ? props.color : "#25d366")};
   outline: none;
   border: none;
   border-radius: 0.5em;
