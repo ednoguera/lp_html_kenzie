@@ -39,7 +39,7 @@ const Home = () => {
   const Label = (
     <p>
       Entre agora no nosso
-      <span style={{ color: "#25D366" }}> GRUPO VIP de WhatsApp </span>
+      <span style={{ color: blue }}> GRUPO VIP do Telegram </span>
       para receber o seu acesso às aulas
       <strong style={{ color: orange }}>!</strong>
     </p>

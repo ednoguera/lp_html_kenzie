@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "./colors";
 
 const PageHome = styled.div`
   display: flex;
@@ -566,7 +567,7 @@ const Input = styled.input`
 const Button = styled.button`
   height: 64px;
   width: 410px;
-  background-color: ${(props) => (props.color ? props.color : "#25d366")};
+  background-color: ${(props) => (props.color ? props.color : colors.orange)};
   outline: none;
   border: none;
   border-radius: 0.5em;

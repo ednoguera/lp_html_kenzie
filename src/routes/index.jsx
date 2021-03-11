@@ -19,7 +19,7 @@ const Router = () => {
           path="/obrigado"
           render={() => {
             setTimeout(
-              () => (window.location = "https://curso-html-css.joinzap.app/"),
+              () => (window.location = "https://t.me/aprendahtmlcss"),
               2000
             );
           }}
