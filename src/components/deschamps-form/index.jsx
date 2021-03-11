@@ -1,31 +1,63 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import { Form, Input, Button } from "../../styles/styled-components";
 import { Terms } from "./styles";
 
-import utm from "@segment/utm-params";
+import querySearch from "stringquery";
 
 const DeschampsForm = (props) => {
   const { register, handleSubmit } = useForm();
-  const params = useParams();
+  const location = useLocation();
+  const [params, setParams] = useState({
+    utm_source: "no-tracking",
+    utm_campaign: "no-tracking",
+    utm_medium: "no-tracking",
+    hsa_ad: "no-tracking",
+    hsa_grp: "no-tracking",
+    hsa_cam: "no-tracking",
+    hsa_src: "no-tracking"
+  });
 
   useEffect(() => {
-    const srcs = utm(
-      "?utm_source=google&utm_medium=medium&utm_term=keyword&utm_content=some%20content&utm_campaign=some%20campaign&utm_test=other%20value"
-    );
-    console.log(srcs);
-    console.log(params);
+    const urlParams = querySearch(location.search);
+
+    const trackedParams = {};
+    for (let param in params) {
+      if (urlParams[param]) {
+        trackedParams[param] = urlParams[param];
+      }
+    }
+
+    setParams({ ...params, ...trackedParams });
   }, []);
 
   const onSubmit = (data) => {
     try {
       //Need to rename a few fields to get this to work with activecampaign
-      let preppedData = { "field[14]": data.custom, ...data };
+      let preppedData = {
+        "field[1]": data.utm_source,
+        "field[3]": data.utm_campaign,
+        "field[4]": data.utm_medium,
+        "field[8]": data.hsa_ad,
+        "field[9]": data.hsa_grp,
+        "field[10]": data.hsa_cam,
+        "field[11]": data.hsa_src,
+        ...data
+      };
 
       //Remove the old custom field (renamed above)
-      const { custom, ...cleaned } = preppedData;
+      const {
+        utm_source,
+        utm_campaign,
+        utm_medium,
+        hsa_ad,
+        hsa_grp,
+        hsa_cam,
+        hsa_src,
+        ...cleaned
+      } = preppedData;
 
       //Convert to FormData
       let form_data = new FormData();
@@ -87,8 +119,44 @@ const DeschampsForm = (props) => {
 
       <input
         type="hidden"
-        name="custom"
-        value={"test"}
+        name="utm_source"
+        value={params.utm_source}
+        ref={register({ required: true })}
+      />
+      <input
+        type="hidden"
+        name="utm_campaign"
+        value={params.utm_campaign}
+        ref={register({ required: true })}
+      />
+      <input
+        type="hidden"
+        name="utm_medium"
+        value={params.utm_medium}
+        ref={register({ required: true })}
+      />
+      <input
+        type="hidden"
+        name="hsa_ad"
+        value={params.hsa_ad}
+        ref={register({ required: true })}
+      />
+      <input
+        type="hidden"
+        name="hsa_grp"
+        value={params.hsa_grp}
+        ref={register({ required: true })}
+      />
+      <input
+        type="hidden"
+        name="hsa_cam"
+        value={params.hsa_cam}
+        ref={register({ required: true })}
+      />
+      <input
+        type="hidden"
+        name="hsa_src"
+        value={params.hsa_src}
         ref={register({ required: true })}
       />
 
