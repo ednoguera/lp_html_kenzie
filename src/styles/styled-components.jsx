@@ -567,7 +567,7 @@ const Input = styled.input`
 const Button = styled.button`
   height: 64px;
   width: 410px;
-  background-color: ${(props) => (props.color ? props.color : colors.orange)};
+  background-color: ${(props) => (props.color ? props.color : colors.green)};
   outline: none;
   border: none;
   border-radius: 0.5em;

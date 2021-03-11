@@ -20,7 +20,7 @@ import ContentSection from "../../components/content";
 import { colors } from "../../styles/colors";
 
 const Home = () => {
-  const { blue, orange } = colors;
+  const { blue, orange, green } = colors;
   const { width } = useWindowSize();
 
   const textPreFooterTitle = (
@@ -39,7 +39,7 @@ const Home = () => {
   const Label = (
     <p>
       Entre agora no nosso
-      <span style={{ color: blue }}> GRUPO VIP do Telegram </span>
+      <span style={{ color: green }}> GRUPO VIP do Whatsapp </span>
       para receber o seu acesso às aulas
       <strong style={{ color: orange }}>!</strong>
     </p>
