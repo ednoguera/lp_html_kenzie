@@ -10,9 +10,11 @@ import {
   HeaderContainer,
   BannerContainer
 } from "../../styles/styled-components";
-import Subscribe from "../../components/subscribe-form/subscribe";
+import Subscribe from "../subscribe-form/subscribe";
 import logoBlue from "../assets/img/logo/logo-blue.svg";
-import ActiveCampForm from "../../components/active_campaign_form/";
+import ActiveCampForm from "../active_campaign_form/";
+import DeschampsForm from "..//deschamps-form";
+import DeschampsBanner from "../deschamps-banner";
 import useWindowSize from "../../helper/use-window-hook";
 import { colors } from "../../styles/colors";
 
@@ -22,10 +24,12 @@ const Header = (props) => {
 
   return (
     <HeaderApp>
+      {props.deschamps && <DeschampsBanner />}
       <BannerContainer>
         <HeaderContainer>
           <div>
             <LogoContainer src={logoBlue} />
+
             <TitleContainer>
               <p>
                 DÊ UM START EM SUA CARREIRA DEV
@@ -43,7 +47,13 @@ const Header = (props) => {
             </SubTitleContainer>
 
             <FormContainer>
-              {width < 1024 ? <ActiveCampForm label={props.label} /> : null}
+              {width < 1024 ? (
+                props.deschamps ? (
+                  <DeschampsForm label={props.label} />
+                ) : (
+                  <ActiveCampForm label={props.label} />
+                )
+              ) : null}
               <SubTitle2Container>
                 <div>
                   {width >= 768 ? <img src={props.getImage1} /> : null}
@@ -66,7 +76,13 @@ const Header = (props) => {
             </FormContainer>
           </div>
 
-          {width > 1024 ? <ActiveCampForm label={props.label} /> : null}
+          {width > 1024 ? (
+            props.deschamps ? (
+              <DeschampsForm label={props.label} />
+            ) : (
+              <ActiveCampForm label={props.label} />
+            )
+          ) : null}
         </HeaderContainer>
       </BannerContainer>
     </HeaderApp>

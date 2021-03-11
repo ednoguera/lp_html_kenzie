@@ -28,6 +28,7 @@ const ContentSection = () => {
   return (
     <Background>
       <Title>O que você vai aprender nesse curso:</Title>
+
       <BulletsContainer>
         <Bullet>
           <Text>
@@ -37,6 +38,7 @@ const ContentSection = () => {
             - Criando a estrutura de uma página usando <b>HTML5</b>
           </Text>
         </Bullet>
+
         <Bullet>
           <Text>
             <b>
@@ -45,6 +47,7 @@ const ContentSection = () => {
             - Estilizando a página com <b>CSS3</b>
           </Text>
         </Bullet>
+
         <Bullet>
           <Text>
             <b>
@@ -54,6 +57,7 @@ const ContentSection = () => {
             celulares, e adicionando efeitos visuais
           </Text>
         </Bullet>
+
         <Bullet>
           <Text>
             <b>

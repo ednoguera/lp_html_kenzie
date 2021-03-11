@@ -3,7 +3,7 @@ import { Form, Input, Button } from "../../styles/styled-components";
 import { colors } from "../../styles/colors";
 import { Terms } from "./styles";
 
-const ActiveCampForm = (props) => {
+const DeschampsForm = (props) => {
   const { orange } = colors;
 
   const [defaultMsg, setDefaultMsg] = useState(null);
@@ -11,7 +11,7 @@ const ActiveCampForm = (props) => {
   const [utmMedium, setUtmMedium] = useState("no-tracking");
   const [utmCampaign, setUtmCampaign] = useState("no-tracking");
 
-  const url = "https://kenzie39049.activehosted.com/proc.php";
+  const url = "https://kenzie39049.activehosted.com/proc.php?id=7";
   const pathname = window.location.href;
   let paramsUrl = false;
   let params = false;
@@ -108,4 +108,4 @@ const ActiveCampForm = (props) => {
   );
 };
 
-export default ActiveCampForm;
+export default DeschampsForm;
