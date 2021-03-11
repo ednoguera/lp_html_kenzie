@@ -1,4 +1,4 @@
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Home from "../pages/home";
 import Deschamps from "../pages/deschamps";
 
@@ -10,12 +10,11 @@ const Router = () => {
           <Home />
         </Route>
 
-        <Route exact path="/filipedeschamps">
+        <Route path="/filipedeschamps">
           <Deschamps />
         </Route>
 
         <Route
-          exact
           path="/obrigado"
           render={() => {
             setTimeout(

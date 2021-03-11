@@ -1541,6 +1541,25 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@ndhoule/each@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@ndhoule/each/-/each-2.0.1.tgz#bbed372a603e0713a3193c706a73ddebc5b426a9"
+  integrity sha1-u+03KmA+BxOjGTxwanPd68W0Jqk=
+  dependencies:
+    "@ndhoule/keys" "^2.0.0"
+
+"@ndhoule/foldl@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@ndhoule/foldl/-/foldl-2.0.1.tgz#788acedfa2cfd12ecb0b84d2beaf650d97be84f2"
+  integrity sha1-eIrO36LP0S7LC4TSvq9lDZe+hPI=
+  dependencies:
+    "@ndhoule/each" "^2.0.1"
+
+"@ndhoule/keys@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ndhoule/keys/-/keys-2.0.0.tgz#3d64ae677c65a261747bf3a457c62eb292a4e0ce"
+  integrity sha1-PWSuZ3xlomF0e/OkV8YuspKk4M4=
+
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.3.tgz#3a582bdb53804c6ba6d146579c46e52130cf4a3b"
@@ -1608,6 +1627,14 @@
     "@types/estree" "0.0.39"
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
+
+"@segment/utm-params@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@segment/utm-params/-/utm-params-2.0.0.tgz#fea3c8a92bfba0d69e861fb3b26d7d882f139334"
+  integrity sha1-/qPIqSv7oNaehh+zsm19iC8TkzQ=
+  dependencies:
+    "@ndhoule/foldl" "^2.0.1"
+    component-querystring "^2.0.0"
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.1"
@@ -3699,6 +3726,19 @@ component-emitter@^1.2.1:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.3.0.tgz#16e4070fba8ae29b679f2215853ee181ab2eabc0"
   integrity sha512-Rd3se6QB+sO1TwqZjscQrurpEPIfO0/yYnSin6Q/rD3mOutHvUrCAhJub3r90uNb+SESBuE0QYoB90YdfatsRg==
+
+component-querystring@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/component-querystring/-/component-querystring-2.0.1.tgz#27a2c6c332947e7995f65fc166aaac354cb4c8c5"
+  integrity sha512-Dmf1X9qJVo47r7cCqiPNmA7sGOXupQilH5R4K5Kbud5amblOMd6xr5+YuXZcxcNxoUKPmql6x+urydT6Zuo5+g==
+  dependencies:
+    component-type "1.1.0"
+    trim "1.0.0"
+
+component-type@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/component-type/-/component-type-1.1.0.tgz#95b666aad53e5c8d1f2be135c45b5d499197c0c5"
+  integrity sha1-lbZmqtU+XI0fK+E1xFtdSZGXwMU=
 
 compose-function@3.0.3:
   version "3.0.3"
@@ -10010,6 +10050,16 @@ react-error-overlay@^6.0.8:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.8.tgz#474ed11d04fc6bda3af643447d85e9127ed6b5de"
   integrity sha512-HvPuUQnLp5H7TouGq3kzBeioJmXms1wHy9EGjz2OURWBp4qZO6AfGEcnxts1D/CbwPLRAgTMPCEgYhA3sEM4vw==
 
+react-gtm-module@^2.0.11:
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/react-gtm-module/-/react-gtm-module-2.0.11.tgz#14484dac8257acd93614e347c32da9c5ac524206"
+  integrity sha512-8gyj4TTxeP7eEyc2QKawEuQoAZdjKvMY4pgWfycGmqGByhs17fR+zEBs0JUDq4US/l+vbTl+6zvUIx27iDo/Vw==
+
+react-hook-form@^6.15.4:
+  version "6.15.4"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-6.15.4.tgz#328003e1ccc096cd158899ffe7e3b33735a9b024"
+  integrity sha512-K+Sw33DtTMengs8OdqFJI3glzNl1wBzSefD/ksQw/hJf9CnOHQAU6qy82eOrh0IRNt2G53sjr7qnnw1JDjvx1w==
+
 react-hubspot-form@^1.3.7:
   version "1.3.7"
   resolved "https://registry.yarnpkg.com/react-hubspot-form/-/react-hubspot-form-1.3.7.tgz#28912e93cab9ca99a95390e5fb7af28b8599b23a"
@@ -11336,6 +11386,11 @@ stringify-object@^3.3.0:
     is-obj "^1.0.1"
     is-regexp "^1.0.0"
 
+stringquery@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/stringquery/-/stringquery-1.0.8.tgz#abe561dc5e2e2308558d8b890768f3098594e6e6"
+  integrity sha512-KqKh5OwkldIrG6TRAlOU02EIdvjC2A4LAGVvVyoDXRRTl0224naoKMRBf+uzPFdXE2+rcHVh2NKTznbsn+AzFw==
+
 strip-ansi@6.0.0, strip-ansi@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.0.tgz#0b1571dd7669ccd4f3e06e14ef1eed26225ae532"
@@ -11785,6 +11840,11 @@ tr46@^2.0.2:
   integrity sha512-3n1qG+/5kg+jrbTzwAykB5yRYtQCTqOGKq5U5PE3b0a1/mzo6snDhjGS0zJVJunO0NrT3Dg1MLy5TjWP/UJppg==
   dependencies:
     punycode "^2.1.1"
+
+trim@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/trim/-/trim-1.0.0.tgz#fd1f30b878bdd2d8435fa0f2cc9cbb55f518be7d"
+  integrity sha512-UgtES1lYpE+f4WiGY5lyJlHchuGhTa/xMPH96g/B7gc+pEQPiL41s6ECm7Ky3hkhARG/u1SHGFcleJodAvQOKQ==
 
 triple-beam@^1.2.0, triple-beam@^1.3.0:
   version "1.3.0"

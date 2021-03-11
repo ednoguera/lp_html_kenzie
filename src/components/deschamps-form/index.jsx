@@ -1,63 +1,164 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { useLocation } from "react-router-dom";
+
 import { Form, Input, Button } from "../../styles/styled-components";
-import { colors } from "../../styles/colors";
 import { Terms } from "./styles";
 
+import querySearch from "stringquery";
+
 const DeschampsForm = (props) => {
-  const { orange } = colors;
-
-  const [defaultMsg, setDefaultMsg] = useState(null);
-  const [utmSource, setUtmSource] = useState("no-tracking");
-  const [utmMedium, setUtmMedium] = useState("no-tracking");
-  const [utmCampaign, setUtmCampaign] = useState("no-tracking");
-
-  const url = "https://kenzie39049.activehosted.com/proc.php?id=7";
-  const pathname = window.location.href;
-  let paramsUrl = false;
-  let params = false;
-
-  const getUrlParams = () => {
-    if (pathname.length > 39) {
-      paramsUrl = pathname.split("?")[1];
-      params = paramsUrl.split("&");
-      setUtmSource(params[0].split("=")[1]);
-      setUtmMedium(params[1].split("=")[1]);
-      setUtmCampaign(params[2].split("=")[1]);
-    }
-  };
-
-  const error = (
-    <p style={{ color: orange, "font-size": "14px" }}>
-      Você precisa preencher todos os campos
-    </p>
-  );
-
-  const onFieldBlank = (e) => {
-    e.preventDefault();
-    if (e.target.placeholder === "Email") {
-      setDefaultMsg(true);
-    }
-  };
-
-  useEffect(() => {
-    getUrlParams();
+  const { register, handleSubmit } = useForm();
+  const location = useLocation();
+  const [params, setParams] = useState({
+    utm_source: "no-tracking",
+    utm_campaign: "no-tracking",
+    utm_medium: "no-tracking",
+    hsa_ad: "no-tracking",
+    hsa_grp: "no-tracking",
+    hsa_cam: "no-tracking",
+    hsa_src: "no-tracking"
   });
 
+  useEffect(() => {
+    const urlParams = querySearch(location.search);
+
+    const trackedParams = {};
+    for (let param in params) {
+      if (urlParams[param]) {
+        trackedParams[param] = urlParams[param];
+      }
+    }
+
+    setParams({ ...params, ...trackedParams });
+  }, []);
+
+  const onSubmit = (data) => {
+    try {
+      //Need to rename a few fields to get this to work with activecampaign
+      let preppedData = {
+        "field[1]": data.utm_source,
+        "field[3]": data.utm_campaign,
+        "field[4]": data.utm_medium,
+        "field[8]": data.hsa_ad,
+        "field[9]": data.hsa_grp,
+        "field[10]": data.hsa_cam,
+        "field[11]": data.hsa_src,
+        ...data
+      };
+
+      //Remove the old custom field (renamed above)
+      const {
+        utm_source,
+        utm_campaign,
+        utm_medium,
+        hsa_ad,
+        hsa_grp,
+        hsa_cam,
+        hsa_src,
+        ...cleaned
+      } = preppedData;
+
+      //Convert to FormData
+      let form_data = new FormData();
+      for (let key in cleaned) {
+        form_data.append(key, cleaned[key]);
+      }
+
+      fetch("https://kenzie39049.activehosted.com/proc.php", {
+        method: "POST",
+        mode: "no-cors",
+        cache: "no-cache",
+        body: form_data
+      });
+    } catch (error) {
+      // handle server errors
+      console.log("Request failed", error);
+    }
+  };
+
   return (
-    <Form
-      method="POST"
-      action={url}
-      id="_form_1_"
-      className="_form _form_1 _inline-form  "
-      validate
-    >
-      <input type="hidden" name="u" value="1" />
-      <input type="hidden" name="f" value="1" />
-      <input type="hidden" name="s" />
-      <input type="hidden" name="c" value="0" />
-      <input type="hidden" name="m" value="0" />
-      <input type="hidden" name="act" value="sub" />
-      <input type="hidden" name="v" value="2" />
+    <Form onSubmit={handleSubmit(onSubmit)} method="post">
+      <input
+        type="hidden"
+        name="u"
+        value="7"
+        ref={register({ required: true })}
+      />
+      <input
+        type="hidden"
+        name="f"
+        value="7"
+        ref={register({ required: true })}
+      />
+      <input type="hidden" name="s" ref={register({})} />
+      <input
+        type="hidden"
+        name="c"
+        value="0"
+        ref={register({ required: true })}
+      />
+      <input
+        type="hidden"
+        name="m"
+        value="0"
+        ref={register({ required: true })}
+      />
+      <input
+        type="hidden"
+        name="act"
+        value="sub"
+        ref={register({ required: true })}
+      />
+      <input
+        type="hidden"
+        name="v"
+        value="2"
+        ref={register({ required: true })}
+      />
+
+      <input
+        type="hidden"
+        name="utm_source"
+        value={params.utm_source}
+        ref={register({ required: true })}
+      />
+      <input
+        type="hidden"
+        name="utm_campaign"
+        value={params.utm_campaign}
+        ref={register({ required: true })}
+      />
+      <input
+        type="hidden"
+        name="utm_medium"
+        value={params.utm_medium}
+        ref={register({ required: true })}
+      />
+      <input
+        type="hidden"
+        name="hsa_ad"
+        value={params.hsa_ad}
+        ref={register({ required: true })}
+      />
+      <input
+        type="hidden"
+        name="hsa_grp"
+        value={params.hsa_grp}
+        ref={register({ required: true })}
+      />
+      <input
+        type="hidden"
+        name="hsa_cam"
+        value={params.hsa_cam}
+        ref={register({ required: true })}
+      />
+      <input
+        type="hidden"
+        name="hsa_src"
+        value={params.hsa_src}
+        ref={register({ required: true })}
+      />
 
       <label>{props.label}</label>
       <Input
@@ -65,21 +166,10 @@ const DeschampsForm = (props) => {
         name="email"
         placeholder="Email"
         required
-        onInvalid={onFieldBlank}
         id="email-input"
       />
 
-      <div className="_form_element _field1 _full_width ">
-        <input type="hidden" name="field[1]" value={utmSource} />
-      </div>
-      <div className="_form_element _field3 _full_width ">
-        <input type="hidden" name="field[3]" value={utmMedium} />
-      </div>
-      <div className="_form_element _field4 _full_width ">
-        <input type="hidden" name="field[4]" value={utmCampaign} />
-      </div>
-
-      <Button id="_form_1_submit" className="_submit" type="submit">
+      <Button className="_submit" type="submit">
         ENTRAR NO GRUPO AGORA
       </Button>
 
@@ -94,16 +184,6 @@ const DeschampsForm = (props) => {
         </a>{" "}
         e privacidade da Kenzie Academy Brasil
       </Terms>
-
-      {defaultMsg === true ? (
-        props.width >= 650 ? (
-          <h3 style={{ color: orange }}>
-            Você precisa preencher o campo de email{" "}
-          </h3>
-        ) : (
-          error
-        )
-      ) : null}
     </Form>
   );
 };
