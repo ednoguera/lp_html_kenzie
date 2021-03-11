@@ -10,7 +10,7 @@ const Router = () => {
           <Home />
         </Route>
 
-        <Route path="/filipedeschamps/:slug">
+        <Route path="/filipedeschamps">
           <Deschamps />
         </Route>
 
