@@ -2,28 +2,34 @@ import React, { useState, useEffect } from "react";
 import { Form, Input, Button } from "../../styles/styled-components";
 import { colors } from "../../styles/colors";
 import { Terms } from "./styles";
+import querySearch from "stringquery";
+import { useLocation } from "react-router-dom";
 
 const ActiveCampForm = (props) => {
   const { orange } = colors;
+  const location = useLocation();
 
   const [defaultMsg, setDefaultMsg] = useState(null);
   const [utmSource, setUtmSource] = useState("no-tracking");
   const [utmMedium, setUtmMedium] = useState("no-tracking");
   const [utmCampaign, setUtmCampaign] = useState("no-tracking");
+  const [hsaAd, setHsaAd] = useState("no-tracking");
+  const [hsaGrp, setHsaGrp] = useState("no-tracking");
+  const [hsaCam, setHsaCam] = useState("no-tracking");
+  const [hsaSrc, setHsaSrc] = useState("no-tracking");
 
   const url = "https://kenzie39049.activehosted.com/proc.php";
-  const pathname = window.location.href;
-  let paramsUrl = false;
-  let params = false;
 
   const getUrlParams = () => {
-    if (pathname.length > 39) {
-      paramsUrl = pathname.split("?")[1];
-      params = paramsUrl.split("&");
-      setUtmSource(params[0].split("=")[1]);
-      setUtmMedium(params[1].split("=")[1]);
-      setUtmCampaign(params[2].split("=")[1]);
-    }
+    const urlParams = querySearch(location.search);
+
+    setUtmSource(urlParams.utm_source);
+    setUtmMedium(urlParams.utm_medium);
+    setUtmCampaign(urlParams.utm_campaign);
+    setHsaAd(urlParams.hsa_ad);
+    setHsaGrp(urlParams.hsa_grp);
+    setHsaCam(urlParams.hsa_cam);
+    setHsaSrc(urlParams.hsa_src);
   };
 
   const error = (
@@ -47,12 +53,12 @@ const ActiveCampForm = (props) => {
     <Form
       method="POST"
       action={url}
-      id="_form_1_"
-      className="_form _form_1 _inline-form  "
+      id={"_form_" + props.formId + "_"}
+      className={"_form _form_" + props.formId + " _inline-form  "}
       validate
     >
-      <input type="hidden" name="u" value="1" />
-      <input type="hidden" name="f" value="1" />
+      <input type="hidden" name="u" value={props.formId} />
+      <input type="hidden" name="f" value={props.formId} />
       <input type="hidden" name="s" />
       <input type="hidden" name="c" value="0" />
       <input type="hidden" name="m" value="0" />
@@ -77,6 +83,18 @@ const ActiveCampForm = (props) => {
       </div>
       <div className="_form_element _field4 _full_width ">
         <input type="hidden" name="field[4]" value={utmCampaign} />
+      </div>
+      <div className="_form_element _field8 _full_width ">
+        <input type="hidden" name="field[8]" value={hsaAd} />
+      </div>
+      <div className="_form_element _field9 _full_width ">
+        <input type="hidden" name="field[9]" value={hsaGrp} />
+      </div>
+      <div className="_form_element _field10 _full_width ">
+        <input type="hidden" name="field[10]" value={hsaCam} />
+      </div>
+      <div className="_form_element _field11 _full_width ">
+        <input type="hidden" name="field[11]" value={hsaSrc} />
       </div>
 
       <Button id="_form_1_submit" className="_submit" type="submit">

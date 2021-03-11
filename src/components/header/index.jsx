@@ -13,7 +13,6 @@ import {
 import Subscribe from "../subscribe-form/subscribe";
 import logoBlue from "../assets/img/logo/logo-blue.svg";
 import ActiveCampForm from "../active_campaign_form/";
-import DeschampsForm from "..//deschamps-form";
 import DeschampsBanner from "../deschamps-banner";
 import useWindowSize from "../../helper/use-window-hook";
 import { colors } from "../../styles/colors";
@@ -49,9 +48,9 @@ const Header = (props) => {
             <FormContainer>
               {width < 1024 ? (
                 props.deschamps ? (
-                  <DeschampsForm label={props.label} />
+                  <ActiveCampForm label={props.label} formId={7} />
                 ) : (
-                  <ActiveCampForm label={props.label} />
+                  <ActiveCampForm label={props.label} formId={1} />
                 )
               ) : null}
               <SubTitle2Container>
@@ -78,9 +77,9 @@ const Header = (props) => {
 
           {width > 1024 ? (
             props.deschamps ? (
-              <DeschampsForm label={props.label} />
+              <ActiveCampForm label={props.label} formId={7} />
             ) : (
-              <ActiveCampForm label={props.label} />
+              <ActiveCampForm label={props.label} formId={1} />
             )
           ) : null}
         </HeaderContainer>

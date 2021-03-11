@@ -6,6 +6,7 @@ import { Form, Input, Button } from "../../styles/styled-components";
 import { Terms } from "./styles";
 
 import querySearch from "stringquery";
+import axios from "axios";
 
 const DeschampsForm = (props) => {
   const { register, handleSubmit } = useForm();
@@ -65,12 +66,13 @@ const DeschampsForm = (props) => {
         form_data.append(key, cleaned[key]);
       }
 
-      fetch("https://kenzie39049.activehosted.com/proc.php", {
-        method: "POST",
-        mode: "no-cors",
-        cache: "no-cache",
-        body: form_data
-      });
+      console.log("ok");
+
+      axios.post(
+        "https://kenzie39049.activehosted.com/proc.php",
+        { "Access-Control-Allow-Headers": "no-cors" },
+        form_data
+      );
     } catch (error) {
       // handle server errors
       console.log("Request failed", error);
