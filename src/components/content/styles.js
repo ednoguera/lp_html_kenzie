@@ -46,3 +46,25 @@ export const BulletsContainer = styled.div`
 export const Text = styled.p`
   color: #fff;
 `;
+
+export const Button = styled.button`
+  height: 64px;
+  width: 410px;
+  background-color: ${(props) => props.color};
+  outline: none;
+  border: none;
+  border-radius: 0.5em;
+
+  cursor: pointer;
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+
+  @media (min-width: 300px) and (max-width: 1024px) {
+    font-size: 1em;
+    height: 70px;
+    width: 270px;
+    margin: 10px;
+    border-radius: 0.5em;
+  }
+`;

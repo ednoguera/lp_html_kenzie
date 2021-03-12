@@ -1,5 +1,5 @@
 import React from "react";
-import { IconContainer } from "../../styles/styled-components";
+import { IconContainer } from "./styles";
 
 const Icon = (props) => {
     return (

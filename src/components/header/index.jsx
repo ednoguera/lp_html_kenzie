@@ -9,8 +9,7 @@ import {
   ThumbHeader,
   HeaderContainer,
   BannerContainer
-} from "../../styles/styled-components";
-import Subscribe from "../subscribe-form/subscribe";
+} from "./styles";
 import logoBlue from "../assets/img/logo/logo-blue.svg";
 import ActiveCampForm from "../active_campaign_form/";
 import DeschampsBanner from "../deschamps-banner";
@@ -24,6 +23,7 @@ const Header = (props) => {
   return (
     <HeaderApp>
       {props.deschamps && <DeschampsBanner />}
+
       <BannerContainer>
         <HeaderContainer>
           <div>

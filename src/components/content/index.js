@@ -3,9 +3,9 @@ import {
   Title,
   StyledBullet,
   BulletsContainer,
-  Text
+  Text,
+  Button
 } from "./styles";
-import { Button } from "../../styles/styled-components";
 import { colors } from "../../styles/colors";
 import check from "../assets/img/icons/check.png";
 
