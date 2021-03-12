@@ -18,12 +18,12 @@ const Router = ({ dataLayer }) => {
         <Route
           path="/obrigado"
           render={() => {
-            TagManager.dataLayer({ event: "activecampaign-form-sent" });
-            console.log(dataLayer);
-            setTimeout(
-              () => (window.location = "https://curso-html-css.joinzap.app/"),
-              2000
-            );
+            TagManager.dataLayer({
+              dataLayer: { event: "activecampaign-form-sent" }
+            });
+            setTimeout(() => {
+              window.location = "https://curso-html-css.joinzap.app/";
+            }, 2000);
           }}
         />
       </Switch>
