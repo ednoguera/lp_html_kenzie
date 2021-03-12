@@ -69,7 +69,6 @@ const HeaderContainer = styled.div`
   }
 `;
 
-
 const TitleContainer = styled.div`
   p {
     font-size: 48px;
@@ -482,7 +481,6 @@ const HeaderTypSection = styled.header`
   }
 `;
 
-
 const OrderedList = styled.div`
   li {
     color: #fff;
@@ -546,7 +544,6 @@ export {
   TextContainer,
   FooterSection,
   HeaderTypSection,
-  Button,
   OrderedList,
   TextFinal,
   LogoContainer
