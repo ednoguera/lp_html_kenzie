@@ -5,6 +5,7 @@ const { orange, blue } = colors;
 
 export const Background = styled.div`
   background-color: #171717;
+  box-sizing: border-box;
   width: 100vw;
   padding: 2em;
   display: flex;

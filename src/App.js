@@ -1,10 +1,10 @@
-import Router from './routes/'
-import './App.css';
+import Router from "./routes/";
+import "./App.css";
 
-function App() {
+function App({ dataLayer }) {
   return (
     <div className="App">
-      <Router />
+      <Router dataLayer={dataLayer} />
     </div>
   );
 }

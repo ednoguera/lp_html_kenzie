@@ -7,7 +7,8 @@ import { BrowserRouter } from "react-router-dom";
 import TagManager from "react-gtm-module";
 
 const tagManagerArgs = {
-  gtmId: "GTM-NB5L2PM"
+  gtmId: "GTM-NB5L2PM",
+  dataLayer: []
 };
 
 TagManager.initialize(tagManagerArgs);
@@ -15,7 +16,7 @@ TagManager.initialize(tagManagerArgs);
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <App />
+      <App dataLayer={tagManagerArgs.dataLayer} />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
