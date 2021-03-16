@@ -55,7 +55,7 @@ export const TitleContainer = styled.div`
         margin: 0 auto;
 
         p {
-            font-size: 1.7em;
+            font-size: 1.6em;
             width: 100%;
             text-align: center;
             padding: 0 0.8em;
@@ -89,9 +89,21 @@ export const SubTitleContainer = styled.div`
 
 export const SubTitle2Container = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
 
     img {
+        width: 6em;
+        margin-right: 2em;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+    }
+
+    .info img {
         margin-right: 2rem;
         height: 5vmin;
     }
@@ -109,13 +121,23 @@ export const SubTitle2Container = styled.div`
     }
 
     @media (min-width: 320px) and (max-width: 1024px) {
-        padding: 1em 0;
-        display: flex;
-        flex-direction: row !important;
-        justify-content: center;
-        align-items: center !important;
+        flex-direction: column-reverse;
+        align-items: center;
 
-        div {
+        img {
+            margin: 1em 0 0 0;
+            width: 7em;
+        }
+
+        .info {
+            padding: 1em 0;
+            display: flex;
+            flex-direction: row !important;
+            justify-content: center;
+            align-items: center !important;
+        }
+
+        .info div {
             margin: 0;
         }
 
@@ -126,21 +148,21 @@ export const SubTitle2Container = styled.div`
             text-align: center;
         }
 
-        img {
+        .info img {
             display: none;
         }
 
-        div:first-of-type p {
+        .info div:first-of-type p {
             text-align: right;
         }
 
-        div:nth-child(2) {
+        .info div:nth-child(2) {
             border: 1px solid #747474;
             margin: 0 2em;
             height: 3em;
         }
 
-        div:last-of-type p {
+        .info div:last-of-type p {
             text-align: left;
         }
     }
