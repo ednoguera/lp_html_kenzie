@@ -50,7 +50,7 @@ const Header = (props) => {
               <SubTitle2Container>
                 <div className="info">
                   <div>
-                    {width >= 768 ? <img src={props.getImage1} /> : null}
+                    {width >= 768 ? <img src={props.getImage2} /> : null}
                     <p>
                       <strong style={{ color: orange }}>22 A 25</strong>
                       {width < 1024 && <br />} DE MARÇO
@@ -60,19 +60,21 @@ const Header = (props) => {
                   </div>
                   {width < 1024 && <div className="divider" />}
                   <div>
-                    {width >= 768 ? <img src={props.getImage2} /> : null}
+                    {width >= 768 ? <img src={props.getImage1} /> : null}
                     <p>
                       <strong style={{ color: orange }}>100% GRÁTIS</strong>
                       {width < 1024 && <br />} E AO VIVO
                     </p>
                   </div>
                 </div>
+
                 {!props.deschamps && (
                   <div className="sticker">
                     <img src={sticker} />
                   </div>
                 )}
               </SubTitle2Container>
+
               {width < 1024 ? (
                 props.deschamps ? (
                   <ActiveCampForm
