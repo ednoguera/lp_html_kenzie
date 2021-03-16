@@ -3,7 +3,7 @@ import {
   PreFooterSection,
   FooterTitleContainer,
   PreFooterGroup
-} from "../../styles/styled-components";
+} from "./styles";
 import TitleImg from "../title-img/";
 import Dani from "../assets/img/icons/dani/dani.png";
 import HashtagSection from "../../components/hashtag-section/";

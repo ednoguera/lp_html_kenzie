@@ -1,9 +1,5 @@
 import React from "react";
-import {
-    TitleImgContainer,
-    Divisor,
-    TextContainer
-} from "../../styles/styled-components";
+import { TitleImgContainer, Divisor, TextContainer } from "./styles";
 
 const TitleImg = (props) => {
     return (

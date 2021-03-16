@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { colors } from "./colors";
 
 const PageHome = styled.div`
   display: flex;

@@ -44,7 +44,7 @@ export const HeaderApp = styled.header`
 
 export const TitleContainer = styled.div`
     p {
-        font-size: 48px;
+        font-size: 2.5em;
         color: #fff;
         text-align: left;
         font-weight: bold;
@@ -55,7 +55,7 @@ export const TitleContainer = styled.div`
         margin: 0 auto;
 
         p {
-            font-size: 1.8em;
+            font-size: 1.7em;
             width: 100%;
             text-align: center;
             padding: 0 0.8em;
@@ -120,7 +120,8 @@ export const SubTitle2Container = styled.div`
         }
 
         p {
-            font-size: 1.3em;
+            font-size: 1em;
+            font-weight: bold;
             margin: 0 auto;
             text-align: center;
         }
@@ -135,7 +136,7 @@ export const SubTitle2Container = styled.div`
 
         div:nth-child(2) {
             border: 1px solid #747474;
-            margin: 0 1em;
+            margin: 0 2em;
             height: 3em;
         }
 

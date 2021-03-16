@@ -31,28 +31,21 @@ const Header = (props) => {
 
             <TitleContainer>
               <p>
-                DÊ UM START EM SUA CARREIRA DEV
+                APRENDA HTML E CSS. CRIE E PUBLIQUE SEU SITE EM 4 DIAS
                 <strong style={{ color: orange }}>.</strong>
               </p>
             </TitleContainer>
 
-            <SubTitleContainer>
+            {/*<SubTitleContainer>
               <p>
                 <strong style={{ color: blue }}>
                   Aprenda HTML e CSS do zero
                 </strong>{" "}
                 e saia do curso com o um site totalmente desenvolvido por você.
               </p>
-            </SubTitleContainer>
+            </SubTitleContainer>*/}
 
             <FormContainer>
-              {width < 1024 ? (
-                props.deschamps ? (
-                  <ActiveCampForm label={props.label} formId={7} />
-                ) : (
-                  <ActiveCampForm label={props.label} formId={1} />
-                )
-              ) : null}
               <SubTitle2Container>
                 <div>
                   {width >= 768 ? <img src={props.getImage1} /> : null}
@@ -72,6 +65,13 @@ const Header = (props) => {
                   </p>
                 </div>
               </SubTitle2Container>
+              {width < 1024 ? (
+                props.deschamps ? (
+                  <ActiveCampForm label={props.label} formId={7} />
+                ) : (
+                  <ActiveCampForm label={props.label} formId={1} />
+                )
+              ) : null}
             </FormContainer>
           </div>
 

@@ -38,9 +38,8 @@ const Deschamps = () => {
 
   const Label = (
     <p>
-      Entre agora no nosso
-      <span style={{ color: "#25D366" }}> GRUPO VIP de WhatsApp </span>
-      para receber o seu acesso às aulas
+      Receba o acesso às aulas no nosso
+      <span style={{ color: "#25D366" }}> GRUPO silencioso de WhatsApp</span>
       <strong style={{ color: orange }}>!</strong>
     </p>
   );

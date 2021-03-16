@@ -38,9 +38,8 @@ const Home = () => {
 
   const Label = (
     <p>
-      Entre agora no nosso
-      <span style={{ color: green }}> GRUPO VIP do Whatsapp </span>
-      para receber o seu acesso às aulas
+      Receba acesso às aulas no nosso
+      <span style={{ color: green }}> GRUPO silencioso do Whatsapp</span>
       <strong style={{ color: orange }}>!</strong>
     </p>
   );
