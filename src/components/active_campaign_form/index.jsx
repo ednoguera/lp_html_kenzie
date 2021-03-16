@@ -81,7 +81,7 @@ const ActiveCampForm = (props) => {
         type="submit"
         color={colors.green}
       >
-        APERTE PARA ENTRAR
+        {props.button}
         <img src={whatsapp} />
       </Button>
 

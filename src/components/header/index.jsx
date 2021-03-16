@@ -67,9 +67,9 @@ const Header = (props) => {
               </SubTitle2Container>
               {width < 1024 ? (
                 props.deschamps ? (
-                  <ActiveCampForm label={props.label} formId={7} />
+                  <ActiveCampForm label={props.label} button={"TOQUE AQUI PARA ENTRAR"} formId={7} />
                 ) : (
-                  <ActiveCampForm label={props.label} formId={1} />
+                  <ActiveCampForm label={props.label} button={"TOQUE AQUI PARA ENTRAR"} formId={1} />
                 )
               ) : null}
             </FormContainer>
@@ -77,9 +77,9 @@ const Header = (props) => {
 
           {width > 1024 ? (
             props.deschamps ? (
-              <ActiveCampForm label={props.label} formId={7} />
+              <ActiveCampForm label={props.label} button={"CLIQUE AQUI PARA ENTRAR"} formId={7} />
             ) : (
-              <ActiveCampForm label={props.label} formId={1} />
+              <ActiveCampForm label={props.label} button={"CLIQUE AQUI PARA ENTRAR"} formId={1} />
             )
           ) : null}
         </HeaderContainer>
