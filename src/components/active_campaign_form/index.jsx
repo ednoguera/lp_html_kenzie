@@ -80,7 +80,7 @@ const ActiveCampForm = (props) => {
         type="submit"
         color={colors.green}
       >
-        ENTRAR NO GRUPO AGORA
+        APERTE PARA ENTRAR
       </Button>
 
       <Terms>
