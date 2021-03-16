@@ -90,6 +90,9 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 64px;
     width: 410px;
     background-color: ${(props) => props.color};
@@ -101,6 +104,11 @@ export const Button = styled.button`
     font-size: 20px;
     color: #fff;
     font-weight: bold;
+
+    img {
+        width: 1.3em;
+        margin: 0 0 0 1em;
+    }
 
     @media (min-width: 300px) and (max-width: 1024px) {
         font-size: 1em;

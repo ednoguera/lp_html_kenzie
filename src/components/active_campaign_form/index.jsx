@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { colors } from "../../styles/colors";
 import { Terms, Form, Input, Button } from "./styles";
+import whatsapp from "../assets/img/social/whatsapp.png";
 
 import HiddenInputs from "./hidden-inputs";
 import CustomHiddenInputs from "./custom-hidden-inputs";
@@ -81,6 +82,7 @@ const ActiveCampForm = (props) => {
         color={colors.green}
       >
         APERTE PARA ENTRAR
+        <img src={whatsapp} />
       </Button>
 
       <Terms>
