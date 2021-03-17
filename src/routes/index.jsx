@@ -1,7 +1,7 @@
 import { Switch, Route } from "react-router-dom";
 import Home from "../pages/home";
 import Deschamps from "../pages/deschamps";
-import TagManager from "react-gtm-module";
+import ThankYou from "../pages/thank-you";
 
 const Router = ({ dataLayer }) => {
   return (
@@ -15,17 +15,9 @@ const Router = ({ dataLayer }) => {
           <Deschamps />
         </Route>
 
-        <Route
-          path="/obrigado"
-          render={() => {
-            TagManager.dataLayer({
-              dataLayer: { event: "activecampaign-form-sent" }
-            });
-            setTimeout(() => {
-              window.location = "https://curso-html-css.joinzap.app/";
-            }, 2000);
-          }}
-        />
+        <Route path="/obrigado">
+          <ThankYou />
+        </Route>
       </Switch>
     </>
   );
