@@ -4,6 +4,7 @@ import TagManager from "react-gtm-module";
 import Countdown from "react-countdown";
 import HashtagSection from "../../components/hashtag-section";
 import Footer from "../../components/footer";
+import { useHistory } from "react-router-dom";
 
 import {
   Page,
@@ -13,14 +14,32 @@ import {
   Button,
   SmallContainer,
   SmallContainers,
-  MediumContainer
+  MediumContainer,
+  TimeBlock
 } from "./styles";
 import whatsapp from "../../components/assets/img/social/whatsapp.png";
 import youtube from "../../components/assets/img/social/youtube.png";
 import aula from "../../components/assets/img/icons/aula.png";
 import acessarYt from "../../components/assets/img/social/acessar-yt.svg";
 
+const CountdownFive = ({ minutes, seconds }) => {
+  return (
+    <SmallContainers>
+      <TimeBlock>
+        <p className="number">{minutes}</p>
+        <p className="text">Minutos</p>
+      </TimeBlock>
+      <TimeBlock>
+        <p className="number">{seconds}</p>
+        <p className="text">Segundos</p>
+      </TimeBlock>
+    </SmallContainers>
+  );
+};
+
 const ThankYou = () => {
+  const history = useHistory();
+
   useEffect(() => {
     TagManager.dataLayer({
       dataLayer: { event: "activecampaign-form-sent" }
@@ -30,6 +49,7 @@ const ThankYou = () => {
   return (
     <Page>
       <Title>Sua inscrição está quase concluída!</Title>
+      <Countdown date={Date.now() + 300000} renderer={CountdownFive} />
       <Subtitle>COMPLETE SUA INSCRIÇÃO ANTES QUE ACABE O TEMPO!</Subtitle>
 
       <SubscribeContainer>
@@ -37,7 +57,11 @@ const ThankYou = () => {
           1º Passo - Cadastre-se no nosso grupo VIP no WhatsApp?
         </Subtitle>
         <p className="info">Garanta isso. É importante...</p>
-        <Button color="green">
+        <Button
+          color="green"
+          href="https://curso-html-css.joinzap.app/"
+          target="_blank"
+        >
           <img src={whatsapp} />
           ENTRAR NO GRUPO
         </Button>
@@ -45,7 +69,11 @@ const ThankYou = () => {
 
       <SubscribeContainer align="right">
         <Subtitle>2º Passo - Inscreva-se no canal do Youtube…</Subtitle>
-        <Button color="black">
+        <Button
+          color="black"
+          href="https://www.youtube.com/channel/UC6rcCbDzhVoIm1V7WnwPDIQ"
+          target="_blank"
+        >
           <img src={youtube} className="youtube" />
           INSCREVA-SE NO CANAL
         </Button>
@@ -106,39 +134,18 @@ const ThankYou = () => {
         </SmallContainer>
       </SmallContainers>
 
-      <SmallContainers>
-        <MediumContainer>
-          <Subtitle>
-            3º Passo
-            <br />
-            …acessar os bastidores do evento e obter conteúdo extra conhecendo a
-            Kenzie Academy brasil.
-          </Subtitle>
-          <p className="description">
-            Quer participar do aquecimento das aulas e bastidores para a{" "}
-            <b>Imersão HTML e CSS</b>? Então acesse, siga, e envie uma mensagem
-            para
-            <b> @KenzieAcademyBrasil</b> no Instagram.
-          </p>
-          <Button color="purple">@KenzieAcademyBrasil</Button>
-        </MediumContainer>
-        <MediumContainer>
-          <Subtitle>
-            4º Passo
-            <br />
-            …e que tal Convidar 1 amigo para o evento?
-          </Subtitle>
-          <p className="description">
-            Você pode convidar seus amigos, sócios e familiares através do
-            WhatsApp para assistirem às aulas da Imersão <b>HTML e CSS</b> junto
-            com você utilizando o botão abaixo.
-          </p>
-          <Button color="green">
-            <img src={whatsapp} />
-            Convidar amigo
-          </Button>
-        </MediumContainer>
-      </SmallContainers>
+      <SubscribeContainer>
+        <Subtitle>
+          3º Passo: Acabamos de te enviar <span>um e-mail</span> com um bônus e
+          acesso às lives de aquecimento.
+        </Subtitle>
+        <p className="description">
+          Verifique sua caixa de entrada ou spam/promoções, mova o e-mail para
+          caixa de entrada (se necessário) e já{" "}
+          <b>coloque uma estrela amarela neste e-mail</b>. Assim você recebe
+          todos os avisos e conteúdos!
+        </p>
+      </SubscribeContainer>
 
       <HashtagSection />
       <Footer

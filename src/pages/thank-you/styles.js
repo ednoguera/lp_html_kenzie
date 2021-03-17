@@ -26,6 +26,12 @@ export const Page = styled.div`
     box-sizing: border-box;
     position: relative;
     top: 2em;
+    font-weight: normal;
+  }
+
+  @media (max-width: 1024px) {
+    flex-wrap: wrap;
+    padding: 2em 0;
   }
 `;
 
@@ -64,9 +70,17 @@ export const SubscribeContainer = styled.div`
   .reminder {
     font-weight: normal;
   }
+
+  span {
+    color: ${colors.orange};
+  }
+
+  @media (max-width: 1024px) {
+    width: 70vw;
+  }
 `;
 
-export const Button = styled.button`
+export const Button = styled.a`
   outline: none;
   border: none;
   border-radius: 0.4em;
@@ -75,6 +89,7 @@ export const Button = styled.button`
   background-color: ${(props) => colors[props.color]};
   font-weight: bold;
   font-size: 1.1em;
+  text-decoration: none;
 
   display: flex;
   align-items: center;
@@ -88,10 +103,20 @@ export const Button = styled.button`
   .youtube {
     width: 1.8em;
   }
+
+  @media (max-width: 1024px) {
+    font-size: 0.9em;
+    padding: 0.8em 1em;
+  }
 `;
 
 export const SmallContainers = styled.div`
   display: flex;
+
+  @media (max-width: 1024px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 export const SmallContainer = styled(SubscribeContainer)`
@@ -123,6 +148,11 @@ export const SmallContainer = styled(SubscribeContainer)`
   span {
     color: ${colors.orange};
   }
+
+  @media (max-width: 1024px) {
+    width: 40vw;
+    margin: 1em 1em;
+  }
 `;
 
 export const MediumContainer = styled(SubscribeContainer)`
@@ -142,5 +172,24 @@ export const MediumContainer = styled(SubscribeContainer)`
     font-size: 0.9em;
     font-weight: normal;
     margin: 2em 0;
+  }
+`;
+
+export const TimeBlock = styled(SmallContainer)`
+  flex-direction: column;
+  text-align: center;
+  padding: 1em;
+  margin: 1em;
+
+  p {
+    margin: 0;
+  }
+
+  .number {
+    font-size: 4em;
+  }
+
+  .text {
+    font-size: 1.5em;
   }
 `;
