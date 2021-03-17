@@ -71,7 +71,7 @@ const ThankYou = () => {
         <Subtitle>2º Passo - Inscreva-se no canal do Youtube…</Subtitle>
         <Button
           color="black"
-          href="https://www.youtube.com/channel/UC6rcCbDzhVoIm1V7WnwPDIQ"
+          href="https://www.youtube.com/KenzieAcademyBrasil?sub_confirmation=1"
           target="_blank"
         >
           <img src={youtube} className="youtube" />
