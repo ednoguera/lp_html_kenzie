@@ -54,9 +54,12 @@ const ThankYou = () => {
 
       <SubscribeContainer>
         <Subtitle>
-          1º Passo - Cadastre-se no nosso grupo VIP no WhatsApp?
+          1º Passo - Entre em nosso grupo silencioso do WhatsApp
         </Subtitle>
-        <p className="info">Garanta isso. É importante...</p>
+        <p className="info">
+          É neste canal VIP que você vai receber novidades do curso e avisos em
+          primeira mão, sempre que uma aula for começar.
+        </p>
         <Button
           color="green"
           href="https://curso-html-css.joinzap.app/"
