@@ -120,25 +120,16 @@ export const SmallContainers = styled.div`
 `;
 
 export const SmallContainer = styled(SubscribeContainer)`
-  display: initial;
   width: 11rem;
   margin: 0.6em;
   padding: 0.5em;
   box-sizing: border-box;
   font-weight: normal;
   font-size: 0.85em;
-  position: relative;
-  padding-bottom: 4em;
+  justify-content: space-between;
 
   img {
     width: 100%;
-  }
-
-  a {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
   }
 
   p {
@@ -149,9 +140,13 @@ export const SmallContainer = styled(SubscribeContainer)`
     color: ${colors.orange};
   }
 
-  @media (max-width: 1024px) {
-    width: 40vw;
+  @media (max-width: 768px) {
+    width: 21em;
     margin: 1em 1em;
+  }
+
+  @media (max-width: 480px) {
+    width: 40vw;
   }
 `;
 
