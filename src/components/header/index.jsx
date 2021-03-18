@@ -4,22 +4,21 @@ import {
   LogoContainer,
   HeaderApp,
   TitleContainer,
-  SubTitleContainer,
   SubTitle2Container,
-  ThumbHeader,
   HeaderContainer,
   BannerContainer
 } from "./styles";
 import logoBlue from "../assets/img/logo/logo-blue.svg";
-import sticker from "../assets/img/icons/sticker-valor.png";
 import ActiveCampForm from "../active_campaign_form/";
 import DeschampsBanner from "../deschamps-banner";
 import useWindowSize from "../../helper/use-window-hook";
 import { colors } from "../../styles/colors";
+import Countdown from "react-countdown";
+import CountdownRendererFive from "../countdown-five";
 
 const Header = (props) => {
   const { width } = useWindowSize();
-  const { blue, orange } = colors;
+  const { orange } = colors;
 
   return (
     <HeaderApp>
@@ -50,7 +49,9 @@ const Header = (props) => {
               <SubTitle2Container>
                 <div className="info">
                   <div>
-                    {width >= 768 ? <img src={props.getImage2} /> : null}
+                    {width >= 768 ? (
+                      <img src={props.getImage2} alt="Calendar" />
+                    ) : null}
                     <p>
                       <strong style={{ color: orange }}>22 A 25</strong>
                       {width < 1024 && <br />} DE MARÇO
@@ -60,19 +61,13 @@ const Header = (props) => {
                   </div>
                   {width < 1024 && <div className="divider" />}
                   <div>
-                    {width >= 768 ? <img src={props.getImage1} /> : null}
+                    {width >= 768 ? <img src={props.getImage1} alt="" /> : null}
                     <p>
                       <strong style={{ color: orange }}>100% GRÁTIS</strong>
                       {width < 1024 && <br />} E AO VIVO
                     </p>
                   </div>
                 </div>
-
-                {!props.deschamps && (
-                  <div className="sticker">
-                    <img src={sticker} />
-                  </div>
-                )}
               </SubTitle2Container>
 
               {width < 1024 ? (
@@ -90,6 +85,24 @@ const Header = (props) => {
                   />
                 )
               ) : null}
+              {width < 1024 && (
+                <>
+                  <Countdown
+                    date={Date.now() + 300000}
+                    renderer={CountdownRendererFive}
+                  />
+                  <p
+                    style={{
+                      color: "white",
+                      marginTop: 0,
+                      fontWeight: "bold",
+                      fontSize: ".9em"
+                    }}
+                  >
+                    Não perca tempo, garanta sua vaga!
+                  </p>
+                </>
+              )}
             </FormContainer>
           </div>
 

@@ -82,7 +82,6 @@ const ActiveCampForm = (props) => {
         color={colors.green}
       >
         {props.button}
-        <img src={whatsapp} />
       </Button>
 
       <Terms>
