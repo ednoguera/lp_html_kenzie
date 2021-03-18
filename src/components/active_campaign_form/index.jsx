@@ -6,6 +6,9 @@ import whatsapp from "../assets/img/social/whatsapp.png";
 import HiddenInputs from "./hidden-inputs";
 import CustomHiddenInputs from "./custom-hidden-inputs";
 
+import Countdown from "react-countdown";
+import CountdownRendererFive from "../countdown-five";
+
 import querySearch from "stringquery";
 import { useLocation } from "react-router-dom";
 
@@ -107,6 +110,17 @@ const ActiveCampForm = (props) => {
           </p>
         )
       ) : null}
+      <Countdown date={Date.now() + 300000} renderer={CountdownRendererFive} />
+      <p
+        style={{
+          color: "white",
+          marginTop: 0,
+          fontWeight: "bold",
+          fontSize: ".9em"
+        }}
+      >
+        Não perca tempo, garanta sua vaga!
+      </p>
     </Form>
   );
 };

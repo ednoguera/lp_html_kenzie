@@ -25,13 +25,13 @@ export const Form = styled.form`
     flex-direction: column;
     padding-top: 50px;
     align-items: center;
-    margin: 0 3em;
+    margin: 0 5em;
 
     label {
-        font-size: 1em;
+        font-size: 1.4em;
         color: #fff;
         font-weight: bold;
-        width: 80%;
+        width: 18em;
     }
 
     @media (min-width: 320px) and (max-width: 1024px) {
@@ -39,8 +39,7 @@ export const Form = styled.form`
         padding-top: 0;
 
         label {
-            font-weight: initial;
-            font-size: 1em;
+            font-size: 1.1em;
             width: 85%;
             line-height: 1.4em;
 

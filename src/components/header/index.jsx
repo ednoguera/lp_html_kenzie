@@ -85,24 +85,6 @@ const Header = (props) => {
                   />
                 )
               ) : null}
-              {width < 1024 && (
-                <>
-                  <Countdown
-                    date={Date.now() + 300000}
-                    renderer={CountdownRendererFive}
-                  />
-                  <p
-                    style={{
-                      color: "white",
-                      marginTop: 0,
-                      fontWeight: "bold",
-                      fontSize: ".9em"
-                    }}
-                  >
-                    Não perca tempo, garanta sua vaga!
-                  </p>
-                </>
-              )}
             </FormContainer>
           </div>
 

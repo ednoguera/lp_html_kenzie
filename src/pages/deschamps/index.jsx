@@ -20,7 +20,7 @@ import ContentSection from "../../components/content";
 import { colors } from "../../styles/colors";
 
 const Deschamps = () => {
-  const { blue, orange } = colors;
+  const { blue, orange, green } = colors;
   const { width } = useWindowSize();
 
   const textPreFooterTitle = (
