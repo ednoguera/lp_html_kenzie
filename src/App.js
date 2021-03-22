@@ -4,7 +4,7 @@ import "./App.css";
 function App({ dataLayer }) {
   return (
     <div className="App">
-      <Router dataLayer={dataLayer} />
+      <Router />
     </div>
   );
 }
