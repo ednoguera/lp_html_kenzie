@@ -2,17 +2,27 @@ import { Switch, Route } from "react-router-dom";
 import Home from "../pages/home";
 import Deschamps from "../pages/deschamps";
 import ThankYou from "../pages/thank-you";
+import ClosedPage from "../pages/closed";
+import { isAfter } from "date-fns";
 
 const Router = () => {
   return (
     <>
       <Switch>
         <Route exact path="/">
-          <Home />
+          {isAfter(new Date(), new Date(2021, 2, 22, 19, 0)) ? (
+            <ClosedPage />
+          ) : (
+            <Home />
+          )}
         </Route>
 
         <Route path="/filipedeschamps">
-          <Deschamps />
+          {isAfter(new Date(), new Date(2021, 2, 22, 19, 0)) ? (
+            <ClosedPage />
+          ) : (
+            <Deschamps />
+          )}
         </Route>
 
         <Route path="/obrigado">
