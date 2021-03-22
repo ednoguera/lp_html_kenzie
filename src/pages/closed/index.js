@@ -18,11 +18,45 @@ const ClosedPage = () => {
         igual a essa ;)
       </Text2>
       <Social>
-        <img src={facebook} />
-        <img src={instagram} />
-        <img src={linkedin} />
-        <img src={youtube} />
-        <img src={tiktok} />
+        <a
+          href="https://www.facebook.com/kenzieacademybr/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={facebook} />
+        </a>
+
+        <a
+          href="https://www.instagram.com/kenzieacademybr/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={instagram} />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/school/kenzie-academy-brasil/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={linkedin} />
+        </a>
+
+        <a
+          href="https://www.youtube.com/channel/UC6rcCbDzhVoIm1V7WnwPDIQ?sub_confirmation=1"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={youtube} />
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@kenzieacademy_br"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={tiktok} />
+        </a>
       </Social>
       <HashtagSection />
       <Footer
