@@ -49,12 +49,14 @@ export const Social = styled.div`
 
   img {
     width: 5em;
+    height: 5em;
     margin: 0 1em;
   }
 
   @media (max-width: 1024px) {
     img {
       width: 2em;
+      height: 2em;
     }
   }
 `;
