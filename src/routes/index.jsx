@@ -33,7 +33,7 @@ const Router = () => {
           path="/slack"
           render={() =>
             (window.location.href =
-              "https://join.slack.com/t/cursohtmlecss/shared_invite/zt-nxgtcamv-VF43p3XeJTc9dAIcwSgkgQ")
+              "https://join.slack.com/t/cursohtmlecss/shared_invite/zt-ocm3704h-3DVDiXyxYk2WkByUdrqxxA")
           }
         />
       </Switch>
